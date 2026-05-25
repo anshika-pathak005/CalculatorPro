@@ -1,0 +1,196 @@
+/* ============================================================
+   cards.css — Homepage card grid styles
+   Only used by index.html
+   ============================================================ */
+
+/* ── Navbar ── */
+.navbar {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.navbar-brand-icon {
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.navbar-pill {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.3rem 0.9rem;
+  border-radius: 99px;
+  background: var(--color-surface);
+  color: var(--color-secondary);
+}
+
+/* ── Hero section ── */
+.hero {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+.hero-tag {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.hero-title span {
+  color: var(--color-accent);
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: var(--color-muted);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── Cards grid wrapper ── */
+.cards-section {
+  position: relative;
+  z-index: 10;
+  padding: 0 1.5rem 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ── Individual card ── */
+.calc-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 2px solid transparent;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient top bar on each card */
+.calc-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.calc-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-surface);
+}
+
+/* ── Card icon box ── */
+.card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.9rem;
+  flex-shrink: 0;
+  /* background and color set inline per card via JS */
+}
+
+/* ── Card text ── */
+.card-badge {
+  margin-bottom: 0.5rem;
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+}
+
+.card-desc {
+  font-size: 0.84rem;
+  color: var(--color-muted);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.card-arrow {
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* ── Footer ── */
+.site-footer {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding-bottom: 2rem;
+  font-size: 0.82rem;
+  color: var(--color-muted);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-title {
+    font-size: 1.9rem;
+  }
+}

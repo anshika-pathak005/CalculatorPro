@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prime or Composite Checker — MathHelper</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+
+  <link rel="stylesheet" href="../styles/theme.css" />
+  <link rel="stylesheet" href="../styles/calculator.css" />
+</head>
+<body>
+
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+
+  <nav class="navbar">
+    <a class="navbar-brand" href="../index.html">
+      <span class="navbar-brand-icon">
+        <span class="iconify" data-icon="tabler:calculator" data-width="28"></span>
+      </span>
+      <span class="navbar-brand-name">MathHelper</span>
+    </a>
+    <span class="navbar-pill">Prime or Composite</span>
+  </nav>
+
+  <main class="calc-container">
+    <div class="calc-header">
+      <div class="calc-icon" style="background: #EDE0F5">
+        <span class="iconify" data-icon="tabler:math-pi" data-width="36" data-height="36" style="color: #6E3482"></span>
+      </div>
+      <h1 class="calc-title">Prime or Composite Checker</h1>
+      <p class="calc-desc">Check if a number is prime or composite, and see all its factors.</p>
+    </div>
+
+    <div class="calc-card-single">
+      <label class="input-label">
+        <span class="iconify" data-icon="tabler:numbers" data-width="18"></span>
+        Enter a number
+      </label>
+      <input type="number" id="num-input" class="calc-input" placeholder="e.g., 47" />
+
+      <button onclick="checkPrimeComposite()" class="calc-btn">
+        <span class="iconify" data-icon="tabler:search" data-width="18"></span>
+        Check Number
+      </button>
+
+      <div id="result-area" class="result-area"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    Made for Class 6 &amp; 7 students
+  </footer>
+
+  <script src="../js/calculators/prime.js"></script>
+</body>
+</html>

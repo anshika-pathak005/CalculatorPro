@@ -1,0 +1,85 @@
+/* ============================================================
+   theme.css — Global variables, fonts, body, decorative blobs
+   Every page imports this first.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap');
+
+/* ── Color & font tokens ── */
+:root {
+  --color-primary:   #492258;
+  --color-secondary: #6E3482;
+  --color-accent:    #A56ABD;
+  --color-surface:   #E7DBEF;
+  --color-bg:        #F5EBFA;
+  --color-white:     #ffffff;
+  --color-text:      #2d1a36;
+  --color-muted:     #7a5c8a;
+  --color-error-bg:  #fdeef0;
+  --color-error-fg:  #b71c1c;
+  --color-error-border: #e57373;
+
+  --font-display: 'Baloo 2', cursive;
+  --font-body:    'Nunito', sans-serif;
+
+  --shadow-sm:   0 4px 24px 0 rgba(73, 34, 88, 0.10);
+  --shadow-md:   0 8px 32px 0 rgba(110, 52, 130, 0.18);
+  --radius-lg:   1.25rem;
+  --radius-xl:   1.5rem;
+  --transition:  0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+}
+
+/* ── Decorative background blobs (used on every page) ── */
+.bg-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+.bg-blob-1 {
+  width: 420px; height: 420px;
+  background: var(--color-secondary);
+  top: -120px; left: -120px;
+}
+.bg-blob-2 {
+  width: 320px; height: 320px;
+  background: var(--color-accent);
+  bottom: -80px; right: -80px;
+}
+
+/* ── Shared typography ── */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+
+/* ── Badge chip (used on cards and calc pages) ── */
+.badge {
+  display: inline-block;
+  padding: 0.18rem 0.65rem;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--color-surface);
+  color: var(--color-secondary);
+}
