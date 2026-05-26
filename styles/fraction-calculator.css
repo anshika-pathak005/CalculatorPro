@@ -1,0 +1,396 @@
+/* ============================================================
+   fraction-calculator.css — Specific styles for Fraction Calculator
+   ============================================================ */
+
+/* Expression Line - All in One Row */
+.expression-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+    background: var(--color-bg);
+    border-radius: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Fraction Box */
+.fraction-box {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--color-white);
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.frac-input {
+    width: 80px;
+    padding: 0.6rem;
+    text-align: center;
+    font-size: 1.1rem;
+    border: 2px solid var(--color-surface);
+    border-radius: 0.75rem;
+    background: var(--color-white);
+    font-family: var(--font-body);
+    font-weight: 600;
+}
+
+.num-input {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.den-input {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.frac-input:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(110, 52, 130, 0.1);
+}
+
+.fraction-line {
+    width: 60px;
+    height: 2px;
+    background: var(--color-secondary);
+}
+
+/* Operator Box */
+.operator-box {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.operator-select-inline {
+    width: 70px;
+    padding: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    border: 2px solid var(--color-surface);
+    border-radius: 1rem;
+    background: var(--color-white);
+    color: var(--color-secondary);
+    cursor: pointer;
+    font-family: var(--font-body);
+    text-align: center;
+}
+
+.operator-select-inline:hover {
+    background: var(--color-surface);
+}
+
+/* Equals Box */
+.equals-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.equals-sign {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+}
+
+/* Result Preview */
+.result-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.preview-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    font-family: monospace;
+}
+
+/* Swap Button */
+.swap-btn {
+    width: 100%;
+    margin: 0.5rem 0 1rem;
+    padding: 0.6rem;
+    background: var(--color-surface);
+    border: 2px dashed var(--color-secondary);
+    border-radius: 1rem;
+    color: var(--color-secondary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.swap-btn:hover {
+    background: var(--color-secondary);
+    color: white;
+    border-color: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+/* Result Area */
+.result-area {
+    margin-top: 1.5rem;
+}
+
+.result-card {
+    background: var(--color-white);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border-left: 4px solid var(--color-secondary);
+    animation: slideUp 0.3s ease-out;
+}
+
+.result-card-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* Result Fraction Display */
+.result-fraction {
+    font-size: 2rem;
+    font-weight: 800;
+    font-family: monospace;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.result-fraction-simple {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.result-fraction-simple .frac-num-display {
+    font-size: 1.5rem;
+}
+
+.result-fraction-simple .frac-line-display {
+    width: 50px;
+    height: 2px;
+    background: var(--color-primary);
+}
+
+.result-decimal {
+    text-align: center;
+    color: var(--color-muted);
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Step by Step Container */
+.steps-container {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.step-item {
+    padding: 0.6rem;
+    margin-bottom: 0.6rem;
+    background: var(--color-bg);
+    border-radius: 0.75rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.step-number {
+    font-weight: 800;
+    color: var(--color-secondary);
+    margin-right: 0.5rem;
+}
+
+.step-text {
+    color: var(--color-text);
+}
+
+/* Error Box */
+.error-box {
+    background: var(--color-error-bg);
+    border: 1px solid var(--color-error-border);
+    border-radius: 1rem;
+    padding: 1rem;
+    color: var(--color-error-fg);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Preview Result Styling */
+.preview-result {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .expression-line {
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .frac-input {
+        width: 60px;
+        padding: 0.4rem;
+        font-size: 0.9rem;
+    }
+    
+    .fraction-line {
+        width: 40px;
+    }
+    
+    .operator-select-inline {
+        width: 55px;
+        font-size: 1.2rem;
+        padding: 0.5rem;
+    }
+    
+    .equals-sign {
+        font-size: 1.5rem;
+    }
+    
+    .result-preview {
+        min-width: 70px;
+        padding: 0.3rem 0.8rem;
+    }
+    
+    .preview-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .expression-line {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .fraction-box {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .operator-box {
+        order: 2;
+    }
+    
+    .equals-box {
+        order: 3;
+    }
+    
+    .result-preview {
+        order: 4;
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* Operator Buttons */
+.operator-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.op-btn {
+    width: 60px;
+    padding: 0.6rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+    border: 2px solid var(--color-surface);
+    background: var(--color-white);
+    color: var(--color-secondary);
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.op-btn:hover {
+    background: var(--color-surface);
+    transform: translateY(-2px);
+}
+
+.op-btn.active {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+    color: white;
+    border-color: var(--color-secondary);
+}
+
+/* Preview Result */
+.preview-result {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+    word-break: break-word;
+}
+
+.preview-result .placeholder {
+    font-size: 0.9rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+/* Clear Button */
+.calc-btn-clear {
+    width: 100%;
+    padding: 0.7rem 1.5rem;
+    background: transparent;
+    color: var(--color-muted);
+    font-weight: 600;
+    font-size: 0.85rem;
+    border: 1.5px solid var(--color-surface);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all var(--transition);
+    font-family: var(--font-body);
+}
+
+.calc-btn-clear:hover {
+    background: var(--color-error-bg);
+    border-color: var(--color-error-border);
+    color: var(--color-error-fg);
+}

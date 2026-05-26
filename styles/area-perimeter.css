@@ -1,0 +1,280 @@
+/* ============================================================
+   area-perimeter.css — Specific styles for Area & Perimeter Calculator
+   ============================================================ */
+
+/* Dimension Tabs */
+.dimension-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--color-surface);
+    padding-bottom: 0.5rem;
+}
+
+.dimension-tab {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    background: transparent;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-muted);
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+}
+
+.dimension-tab:hover {
+    background: var(--color-surface);
+    color: var(--color-secondary);
+}
+
+.dimension-tab.active {
+    background: var(--color-surface);
+    color: var(--color-secondary);
+}
+
+/* Shapes Grid */
+.shapes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.shapes-grid.hidden {
+    display: none;
+}
+
+.shape-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+    background: var(--color-white);
+    border: 2px solid var(--color-surface);
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all var(--transition);
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: 0.85rem;
+}
+
+.shape-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-secondary);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+}
+
+.shape-card.selected {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+    border-color: var(--color-secondary);
+    color: white;
+}
+
+.shape-card .iconify {
+    width: 32px;
+    height: 32px;
+}
+
+/* Input Area */
+.input-area {
+    background: var(--color-bg);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    margin-top: 1rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.input-area.hidden {
+    display: none;
+}
+
+.shape-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: var(--font-display);
+}
+
+.input-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.input-row label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.input-row input {
+    padding: 0.7rem 1rem;
+    border: 2px solid var(--color-surface);
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    transition: all var(--transition);
+}
+
+.input-row input:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(110, 52, 130, 0.1);
+}
+
+/* Result Cards */
+.result-card {
+    background: var(--color-white);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border-left: 4px solid var(--color-secondary);
+    animation: slideUp 0.3s ease-out;
+}
+
+.result-card-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.result-card-value {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    font-family: var(--font-display);
+}
+
+.result-card-unit {
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    margin-left: 0.25rem;
+}
+
+.result-card-detail {
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    margin-top: 0.5rem;
+}
+
+/* Formula Reference */
+.formula-ref {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--color-surface);
+}
+
+.formula-ref.hidden {
+    display: none;
+}
+
+.formula-ref-title {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.formula-content {
+    background: var(--color-surface);
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: var(--color-secondary);
+    line-height: 1.6;
+}
+
+/* Two Column Layout for Results */
+.results-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .dimension-tabs {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .shapes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    }
+    
+    .shape-card {
+        padding: 0.75rem 0.25rem;
+        font-size: 0.75rem;
+    }
+    
+    .results-two-col {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .result-card-value {
+        font-size: 1.3rem;
+    }
+}
+
+/* Formula Badges */
+.formula-badge {
+    display: inline-block;
+    background: var(--color-white);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    margin: 0.25rem;
+    font-family: monospace;
+}

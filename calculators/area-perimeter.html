@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Area, Perimeter & Volume Calculator — MathHelper</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Iconify CDN -->
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles/theme.css" />
+  <link rel="stylesheet" href="../styles/calculator.css" />
+  <link rel="stylesheet" href="../styles/area-perimeter.css" />
+</head>
+<body>
+
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="../index.html">
+      <span class="navbar-brand-icon">
+        <span class="iconify" data-icon="tabler:calculator" data-width="28"></span>
+      </span>
+      <span class="navbar-brand-name">MathHelper</span>
+    </a>
+    <span class="navbar-pill">Area & Perimeter</span>
+  </nav>
+
+  <!-- Calculator Main Section -->
+  <main class="calc-container">
+    <div class="calc-header">
+      <div class="calc-icon" style="background: #E8E0F5">
+        <span class="iconify" data-icon="tabler:square" data-width="36" data-height="36" style="color: #6E3482"></span>
+      </div>
+      <h1 class="calc-title">Area, Perimeter & Volume</h1>
+      <p class="calc-desc">Calculate for 2D shapes (Area/Perimeter) and 3D shapes (Volume/Surface Area)</p>
+    </div>
+
+    <div class="calc-card-single">
+      <!-- Main Tabs: 2D or 3D -->
+      <div class="dimension-tabs">
+        <button class="dimension-tab active" data-dim="2d" onclick="switchDimension('2d')">
+          <span class="iconify" data-icon="tabler:shape" data-width="18"></span>
+          2D Shapes (Area & Perimeter)
+        </button>
+        <button class="dimension-tab" data-dim="3d" onclick="switchDimension('3d')">
+          <span class="iconify" data-icon="tabler:cube" data-width="18"></span>
+          3D Shapes (Volume & Surface Area)
+        </button>
+      </div>
+
+      <!-- Shape Grid for 2D -->
+      <div id="shapes-2d" class="shapes-grid">
+        <button class="shape-card" data-shape="square" onclick="selectShape('square')">
+          <span class="iconify" data-icon="tabler:square" data-width="32"></span>
+          <span>Square</span>
+        </button>
+        <button class="shape-card" data-shape="rectangle" onclick="selectShape('rectangle')">
+          <span class="iconify" data-icon="tabler:layout" data-width="32"></span>
+          <span>Rectangle</span>
+        </button>
+        <button class="shape-card" data-shape="triangle" onclick="selectShape('triangle')">
+          <span class="iconify" data-icon="tabler:triangle" data-width="32"></span>
+          <span>Triangle</span>
+        </button>
+        <button class="shape-card" data-shape="right-triangle" onclick="selectShape('right-triangle')">
+          <span class="iconify" data-icon="tabler:triangle" data-width="32"></span>
+          <span>Right Triangle</span>
+        </button>
+        <button class="shape-card" data-shape="equilateral-triangle" onclick="selectShape('equilateral-triangle')">
+          <span class="iconify" data-icon="tabler:triangle" data-width="32"></span>
+          <span>Equilateral △</span>
+        </button>
+        <button class="shape-card" data-shape="circle" onclick="selectShape('circle')">
+          <span class="iconify" data-icon="tabler:circle" data-width="32"></span>
+          <span>Circle</span>
+        </button>
+        <button class="shape-card" data-shape="semicircle" onclick="selectShape('semicircle')">
+          <span class="iconify" data-icon="tabler:semicircle" data-width="32"></span>
+          <span>Semicircle</span>
+        </button>
+        <button class="shape-card" data-shape="parallelogram" onclick="selectShape('parallelogram')">
+          <span class="iconify" data-icon="tabler:shape" data-width="32"></span>
+          <span>Parallelogram</span>
+        </button>
+        <button class="shape-card" data-shape="rhombus" onclick="selectShape('rhombus')">
+          <span class="iconify" data-icon="tabler:diamond" data-width="32"></span>
+          <span>Rhombus</span>
+        </button>
+        <button class="shape-card" data-shape="trapezium" onclick="selectShape('trapezium')">
+          <span class="iconify" data-icon="tabler:shape" data-width="32"></span>
+          <span>Trapezium</span>
+        </button>
+      </div>
+
+      <!-- Shape Grid for 3D -->
+      <div id="shapes-3d" class="shapes-grid hidden">
+        <button class="shape-card" data-shape="cube" onclick="selectShape('cube')">
+          <span class="iconify" data-icon="tabler:cube" data-width="32"></span>
+          <span>Cube</span>
+        </button>
+        <button class="shape-card" data-shape="cuboid" onclick="selectShape('cuboid')">
+          <span class="iconify" data-icon="tabler:box" data-width="32"></span>
+          <span>Cuboid</span>
+        </button>
+        <button class="shape-card" data-shape="cylinder" onclick="selectShape('cylinder')">
+          <span class="iconify" data-icon="tabler:cylinder" data-width="32"></span>
+          <span>Cylinder</span>
+        </button>
+        <button class="shape-card" data-shape="cone" onclick="selectShape('cone')">
+          <span class="iconify" data-icon="tabler:cone" data-width="32"></span>
+          <span>Cone</span>
+        </button>
+        <button class="shape-card" data-shape="sphere" onclick="selectShape('sphere')">
+          <span class="iconify" data-icon="tabler:sphere" data-width="32"></span>
+          <span>Sphere</span>
+        </button>
+        <button class="shape-card" data-shape="hemisphere" onclick="selectShape('hemisphere')">
+          <span class="iconify" data-icon="tabler:circle-half" data-width="32"></span>
+          <span>Hemisphere</span>
+        </button>
+      </div>
+
+      <!-- Input Area (Dynamic) -->
+      <div id="input-area" class="input-area hidden">
+        <div class="shape-title" id="shape-title"></div>
+        <div id="input-fields" class="input-fields"></div>
+        <button onclick="calculateShape()" class="calc-btn">
+          <span class="iconify" data-icon="tabler:calculator" data-width="18"></span>
+          Calculate
+        </button>
+        <button onclick="clearShape()" class="calc-btn-clear" style="margin-top: 0.75rem;">
+          <span class="iconify" data-icon="tabler:refresh" data-width="18"></span>
+          Clear
+        </button>
+      </div>
+
+      <!-- Result Area -->
+      <div id="result-area" class="result-area"></div>
+
+      <!-- Formula Reference -->
+      <div id="formula-ref" class="formula-ref hidden">
+        <div class="formula-ref-title">
+          <span class="iconify" data-icon="tabler:book" data-width="18"></span>
+          Formula Reference
+        </div>
+        <div id="formula-content" class="formula-content"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    Made for Class 6 &amp; 7 students
+  </footer>
+
+  <script src="../js/calculators/area-perimeter.js"></script>
+</body>
+</html>
