@@ -130,6 +130,15 @@ const CALCULATORS = [
         link: "calculators/area-perimeter.html",
     },
     {
+        title: "Unit Converter",
+        description: "Convert between Length (cm, m, km), Weight (mg, g, kg), Volume (ml, L, kL), and Time (sec, min, hours, days).",
+        icon: "tabler:arrows-exchange",
+        iconBg: "#E8E0F5",
+        iconColor: "#6E3482",
+        badge: "Conversions",
+        link: "calculators/unit-converter.html",
+    },
+    {
         title: "Equation Solver",
         description: "Solve linear equations and find the value of x. Supports brackets, fractions, and variables on both sides.",
         icon: "tabler:arrows-join",
