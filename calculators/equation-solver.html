@@ -1,114 +1,165 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Equation Solver — Find X — MathHelper</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equation Solver — Find X — CalculatorPro</title>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Iconify CDN -->
-  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+    <!-- Iconify CDN -->
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="../styles/theme.css" />
-  <link rel="stylesheet" href="../styles/calculator.css" />
-  <link rel="stylesheet" href="../styles/equation-solver.css" />
-</head>
-<body>
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles/theme.css" />
+    <link rel="stylesheet" href="../styles/calculator.css" />
+    <link rel="stylesheet" href="../styles/equation-solver.css" />
+  </head>
+  <body>
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
 
-  <div class="bg-blob bg-blob-1"></div>
-  <div class="bg-blob bg-blob-2"></div>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a class="navbar-brand" href="../index.html">
+        <span class="navbar-brand-icon">
+          <span
+            class="iconify"
+            data-icon="tabler:calculator"
+            data-width="28"
+          ></span>
+        </span>
+        <span class="navbar-brand-name">CalculatorPro</span>
+      </a>
+      <span class="navbar-pill">Equation Solver</span>
+    </nav>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <a class="navbar-brand" href="../index.html">
-      <span class="navbar-brand-icon">
-        <span class="iconify" data-icon="tabler:calculator" data-width="28"></span>
-      </span>
-      <span class="navbar-brand-name">MathHelper</span>
-    </a>
-    <span class="navbar-pill">Equation Solver</span>
-  </nav>
-
-  <!-- Calculator Main Section -->
-  <main class="calc-container">
-    <div class="calc-header">
-      <div class="calc-icon" style="background: #F5E8E0">
-        <span class="iconify" data-icon="tabler:math-x" data-width="36" data-height="36" style="color: #C4601A"></span>
-      </div>
-      <h1 class="calc-title">Equation Solver</h1>
-      <p class="calc-desc">Solve linear equations and find the value of x. Supports brackets, fractions, and variables on both sides.</p>
-    </div>
-
-    <div class="calc-card-single">
-      <!-- Equation Input -->
-      <label class="input-label">
-        <span class="iconify" data-icon="tabler:math" data-width="18"></span>
-        Enter Equation
-      </label>
-      <input type="text" id="equation-input" class="calc-input equation-input" placeholder="e.g., 2x + 5 = 13" />
-      
-      <!-- Example Buttons -->
-      <div class="examples-section">
-        <span class="examples-label">Examples:</span>
-        <button class="example-btn" onclick="setExample('2x + 5 = 13')">2x + 5 = 13</button>
-        <button class="example-btn" onclick="setExample('3x - 7 = 14')">3x - 7 = 14</button>
-        <button class="example-btn" onclick="setExample('2x + 3 = x + 8')">2x + 3 = x + 8</button>
-        <button class="example-btn" onclick="setExample('2(x + 4) = 20')">2(x + 4) = 20</button>
-        <button class="example-btn" onclick="setExample('x/3 + 2 = 8')">x/3 + 2 = 8</button>
-        <button class="example-btn" onclick="setExample('5x - 2 = 3x + 10')">5x - 2 = 3x + 10</button>
+    <!-- Calculator Main Section -->
+    <main class="calc-container">
+      <div class="calc-header">
+        <div class="calc-icon" style="background: #f5e8e0">
+          <span
+            class="iconify"
+            data-icon="tabler:math-x"
+            data-width="36"
+            data-height="36"
+            style="color: #c4601a"
+          ></span>
+        </div>
+        <h1 class="calc-title">Equation Solver</h1>
+        <p class="calc-desc">
+          Solve linear equations and find the value of x. Supports brackets,
+          fractions, and variables on both sides.
+        </p>
       </div>
 
-      <!-- Custom Keypad -->
-      <div class="keypad">
-        <div class="keypad-row">
-          <button class="key-btn" onclick="appendToEquation('x')">x</button>
-          <button class="key-btn" onclick="appendToEquation('+')">+</button>
-          <button class="key-btn" onclick="appendToEquation('-')">-</button>
-          <button class="key-btn" onclick="appendToEquation('×')">×</button>
-          <button class="key-btn" onclick="appendToEquation('÷')">÷</button>
+      <div class="calc-card-single">
+        <!-- Equation Input -->
+        <label class="input-label">
+          <span class="iconify" data-icon="tabler:math" data-width="18"></span>
+          Enter Equation
+        </label>
+        <input
+          type="text"
+          id="equation-input"
+          class="calc-input equation-input"
+          placeholder="e.g., 2x + 5 = 13"
+        />
+
+        <!-- Example Buttons -->
+        <div class="examples-section">
+          <span class="examples-label">Examples:</span>
+          <button class="example-btn" onclick="setExample('2x + 5 = 13')">
+            2x + 5 = 13
+          </button>
+          <button class="example-btn" onclick="setExample('3x - 7 = 14')">
+            3x - 7 = 14
+          </button>
+          <button class="example-btn" onclick="setExample('2x + 3 = x + 8')">
+            2x + 3 = x + 8
+          </button>
+          <button class="example-btn" onclick="setExample('2(x + 4) = 20')">
+            2(x + 4) = 20
+          </button>
+          <button class="example-btn" onclick="setExample('x/3 + 2 = 8')">
+            x/3 + 2 = 8
+          </button>
+          <button class="example-btn" onclick="setExample('5x - 2 = 3x + 10')">
+            5x - 2 = 3x + 10
+          </button>
         </div>
-        <div class="keypad-row">
-          <button class="key-btn" onclick="appendToEquation('(')">(</button>
-          <button class="key-btn" onclick="appendToEquation(')')">)</button>
-          <button class="key-btn" onclick="appendToEquation('=')">=</button>
-          <button class="key-btn" onclick="appendToEquation('/')">/</button>
-          <button class="key-btn clear-btn" onclick="clearEquation()">AC</button>
+
+        <!-- Custom Keypad -->
+        <div class="keypad">
+          <div class="keypad-row">
+            <button class="key-btn" onclick="appendToEquation('x')">x</button>
+            <button class="key-btn" onclick="appendToEquation('+')">+</button>
+            <button class="key-btn" onclick="appendToEquation('-')">-</button>
+            <button class="key-btn" onclick="appendToEquation('×')">×</button>
+            <button class="key-btn" onclick="appendToEquation('÷')">÷</button>
+          </div>
+          <div class="keypad-row">
+            <button class="key-btn" onclick="appendToEquation('(')">(</button>
+            <button class="key-btn" onclick="appendToEquation(')')">)</button>
+            <button class="key-btn" onclick="appendToEquation('=')">=</button>
+            <button class="key-btn" onclick="appendToEquation('/')">/</button>
+            <button class="key-btn clear-btn" onclick="clearEquation()">
+              AC
+            </button>
+          </div>
+          <div class="keypad-row">
+            <button class="key-btn num-btn" onclick="appendToEquation('1')">
+              1
+            </button>
+            <button class="key-btn num-btn" onclick="appendToEquation('2')">
+              2
+            </button>
+            <button class="key-btn num-btn" onclick="appendToEquation('3')">
+              3
+            </button>
+            <button class="key-btn" onclick="appendToEquation('.')">.</button>
+            <button class="key-btn backspace-btn" onclick="backspace()">
+              ⌫
+            </button>
+          </div>
+          <div class="keypad-row">
+            <button class="key-btn num-btn" onclick="appendToEquation('4')">
+              4
+            </button>
+            <button class="key-btn num-btn" onclick="appendToEquation('5')">
+              5
+            </button>
+            <button class="key-btn num-btn" onclick="appendToEquation('6')">
+              6
+            </button>
+            <button class="key-btn" onclick="appendToEquation('^')">^</button>
+            <button class="key-btn calculate-btn" onclick="solveEquation()">
+              = Solve
+            </button>
+          </div>
+          <div class="keypad-row">
+            <button class="key-btn num-btn" onclick="appendToEquation('7')">
+              7
+            </button>
+            <button class="key-btn num-btn" onclick="appendToEquation('8')">
+              8
+            </button>
+            <button class="key-btn num-btn" onclick="appendToEquation('9')">
+              9
+            </button>
+            <button class="key-btn" onclick="appendToEquation('0')">0</button>
+            <button class="key-btn" onclick="appendToEquation('00')">00</button>
+          </div>
         </div>
-        <div class="keypad-row">
-          <button class="key-btn num-btn" onclick="appendToEquation('1')">1</button>
-          <button class="key-btn num-btn" onclick="appendToEquation('2')">2</button>
-          <button class="key-btn num-btn" onclick="appendToEquation('3')">3</button>
-          <button class="key-btn" onclick="appendToEquation('.')">.</button>
-          <button class="key-btn backspace-btn" onclick="backspace()">⌫</button>
-        </div>
-        <div class="keypad-row">
-          <button class="key-btn num-btn" onclick="appendToEquation('4')">4</button>
-          <button class="key-btn num-btn" onclick="appendToEquation('5')">5</button>
-          <button class="key-btn num-btn" onclick="appendToEquation('6')">6</button>
-          <button class="key-btn" onclick="appendToEquation('^')">^</button>
-          <button class="key-btn calculate-btn" onclick="solveEquation()">= Solve</button>
-        </div>
-        <div class="keypad-row">
-          <button class="key-btn num-btn" onclick="appendToEquation('7')">7</button>
-          <button class="key-btn num-btn" onclick="appendToEquation('8')">8</button>
-          <button class="key-btn num-btn" onclick="appendToEquation('9')">9</button>
-          <button class="key-btn" onclick="appendToEquation('0')">0</button>
-          <button class="key-btn" onclick="appendToEquation('00')">00</button>
-        </div>
+
+        <!-- Solution Area -->
+        <div id="solution-area" class="solution-area"></div>
       </div>
+    </main>
 
-      <!-- Solution Area -->
-      <div id="solution-area" class="solution-area"></div>
-    </div>
-  </main>
+    <footer class="site-footer">Made for Class 6 &amp; 7 students</footer>
 
-  <footer class="site-footer">
-    Made for Class 6 &amp; 7 students
-  </footer>
-
-  <script src="../js/calculators/equation-solver.js"></script>
-</body>
+    <script src="../js/calculators/equation-solver.js"></script>
+  </body>
 </html>
