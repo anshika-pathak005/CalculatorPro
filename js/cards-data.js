@@ -139,6 +139,15 @@ const CALCULATORS = [
         link: "calculators/unit-converter.html",
     },
     {
+        title: "Fraction-Decimal-Percent",
+        description: "Convert between fractions, decimals, and percentages instantly. Enter any one value, get all three!",
+        icon: "tabler:arrows-diff",
+        iconBg: "#E0E8F5",
+        iconColor: "#3456A4",
+        badge: "Conversions",
+        link: "calculators/fraction-decimal-percent.html",
+    },
+    {
         title: "Equation Solver",
         description: "Solve linear equations and find the value of x. Supports brackets, fractions, and variables on both sides.",
         icon: "tabler:arrows-join",

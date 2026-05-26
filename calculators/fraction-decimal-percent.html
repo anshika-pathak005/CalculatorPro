@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fraction-Decimal-Percent Converter — MathHelper</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Iconify CDN -->
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles/theme.css" />
+  <link rel="stylesheet" href="../styles/calculator.css" />
+  <link rel="stylesheet" href="../styles/fraction-decimal-percent.css" />
+</head>
+<body>
+
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="../index.html">
+      <span class="navbar-brand-icon">
+        <span class="iconify" data-icon="tabler:calculator" data-width="28"></span>
+      </span>
+      <span class="navbar-brand-name">MathHelper</span>
+    </a>
+    <span class="navbar-pill">Fraction-Decimal-Percent</span>
+  </nav>
+
+  <!-- Calculator Main Section -->
+  <main class="calc-container">
+    <div class="calc-header">
+      <div class="calc-icon" style="background: #E0E8F5">
+        <span class="iconify" data-icon="tabler:arrows-diff" data-width="36" data-height="36" style="color: #3456A4"></span>
+      </div>
+      <h1 class="calc-title">Fraction ↔ Decimal ↔ Percent</h1>
+      <p class="calc-desc">Enter any value (Fraction, Decimal, or Percent) and get the other two instantly!</p>
+    </div>
+
+    <div class="calc-card-single">
+      <!-- Three Conversion Boxes -->
+      <div class="conversion-grid">
+        <!-- Fraction Box -->
+        <div class="conversion-card fraction-card">
+          <div class="card-header">
+            <span class="iconify" data-icon="tabler:divide" data-width="20"></span>
+            <h3>Fraction</h3>
+          </div>
+          <div class="fraction-input-group">
+            <div class="fraction-input-box">
+              <input type="number" id="frac-num" class="frac-input" placeholder="Numerator" value="" step="any" />
+              <div class="fraction-line"></div>
+              <input type="number" id="frac-den" class="frac-input" placeholder="Denominator" value="" step="any" />
+            </div>
+          </div>
+          <div class="input-hint">Enter as a/b or use numerator/denominator</div>
+          <button class="clear-btn-small" onclick="clearFraction()">
+            <span class="iconify" data-icon="tabler:x" data-width="14"></span>
+            Clear
+          </button>
+        </div>
+
+        <!-- Decimal Box -->
+        <div class="conversion-card decimal-card">
+          <div class="card-header">
+            <span class="iconify" data-icon="tabler:numbers" data-width="20"></span>
+            <h3>Decimal</h3>
+          </div>
+          <input type="number" id="decimal-val" class="decimal-input" placeholder="e.g., 0.75" value="" step="any" />
+          <div class="input-hint">Enter any decimal number</div>
+          <button class="clear-btn-small" onclick="clearDecimal()">
+            <span class="iconify" data-icon="tabler:x" data-width="14"></span>
+            Clear
+          </button>
+        </div>
+
+        <!-- Percent Box -->
+        <div class="conversion-card percent-card">
+          <div class="card-header">
+            <span class="iconify" data-icon="tabler:percent" data-width="20"></span>
+            <h3>Percent</h3>
+          </div>
+          <input type="number" id="percent-val" class="percent-input" placeholder="e.g., 75" value="" step="any" />
+          <div class="input-hint">Enter percentage (without % symbol)</div>
+          <button class="clear-btn-small" onclick="clearPercent()">
+            <span class="iconify" data-icon="tabler:x" data-width="14"></span>
+            Clear
+          </button>
+        </div>
+      </div>
+
+      <!-- Result Preview Box -->
+      <div class="result-preview-box" id="result-preview-box">
+        <div class="preview-label">
+          <span class="iconify" data-icon="tabler:eye" data-width="16"></span>
+          All Values
+        </div>
+        <div class="preview-grid" id="preview-grid">
+          <div class="preview-item">
+            <span class="preview-type">Fraction</span>
+            <span class="preview-value" id="preview-fraction">—</span>
+          </div>
+          <div class="preview-item">
+            <span class="preview-type">Decimal</span>
+            <span class="preview-value" id="preview-decimal">—</span>
+          </div>
+          <div class="preview-item">
+            <span class="preview-type">Percent</span>
+            <span class="preview-value" id="preview-percent">—</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detailed Result Area -->
+      <div id="result-area" class="result-area"></div>
+
+      <!-- Clear All Button -->
+      <button onclick="clearAllConverter()" class="calc-btn-clear" style="margin-top: 1rem;">
+        <span class="iconify" data-icon="tabler:trash" data-width="18"></span>
+        Clear All
+      </button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    Made for Class 6 &amp; 7 students
+  </footer>
+
+  <script src="../js/calculators/fraction-decimal-percent.js"></script>
+</body>
+</html>
