@@ -8,14 +8,13 @@ function checkEvenOdd() {
     const n = parseInt(input.value.trim());
 
     if (isNaN(n) || input.value.trim() === "") {
-        area.innerHTML = `<div class="error-box">⚠️ Please enter a valid whole number.</div>`;
+        area.innerHTML = `<div class="error-box"> Please enter a valid whole number.</div>`;
         return;
     }
 
     const isEven = n % 2 === 0;
     const label = isEven ? "Even" : "Odd";
     const color = isEven ? "var(--color-secondary)" : "#c05621";
-    const emoji = isEven ? "🔵" : "🟠";
 
     const detail = isEven
         ? `${n} ÷ 2 = ${n / 2} (no remainder), so it is even.`
@@ -27,7 +26,6 @@ function checkEvenOdd() {
 
     area.innerHTML = `
     <div class="result-box">
-      <div class="result-label">${emoji} Result</div>
       <div class="result-value" style="color:${color}">${label}</div>
       <div class="result-detail">${detail}</div>
       <div class="result-detail">Nearest ${label.toLowerCase()} numbers:

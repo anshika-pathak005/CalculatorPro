@@ -1,0 +1,154 @@
+/* ============================================================
+   bodmas.css — Special styles only for BODMAS Calculator
+   ============================================================ */
+
+/* Custom Keypad */
+.keypad {
+    margin-top: 1.5rem;
+}
+
+.keypad-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.key-btn {
+    flex: 1;
+    padding: 0.75rem 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 2px solid var(--color-surface);
+    background: var(--color-white);
+    color: var(--color-primary);
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all var(--transition);
+    font-family: var(--font-body);
+    text-align: center;
+}
+
+.key-btn:hover {
+    background: var(--color-surface);
+    transform: translateY(-2px);
+}
+
+/* Number buttons */
+.num-btn {
+    background: var(--color-white);
+    color: var(--color-primary);
+}
+
+/* Operation buttons */
+.op-btn {
+    background: var(--color-surface);
+    color: var(--color-secondary);
+}
+
+/* Clear button */
+.clear-btn {
+    background: var(--color-error-bg);
+    color: var(--color-error-fg);
+    border-color: var(--color-error-border);
+}
+
+.clear-btn:hover {
+    background: var(--color-error-border);
+    color: white;
+}
+
+/* Backspace button */
+.backspace-btn {
+    background: var(--color-surface);
+    color: var(--color-muted);
+}
+
+/* Calculate button */
+.calculate-btn {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+    color: white;
+    border: none;
+}
+
+.calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Expression input special styling */
+.expression-input {
+    font-size: 1.1rem;
+    font-family: monospace;
+    letter-spacing: 0.5px;
+}
+
+/* Steps Container */
+.steps-container {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+/* Individual Step Item */
+.step-item {
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+    background: var(--color-white);
+    border-radius: 0.75rem;
+    border-left: 3px solid var(--color-secondary);
+}
+
+.step-number {
+    font-weight: 800;
+    color: var(--color-secondary);
+    margin-right: 0.5rem;
+}
+
+.step-desc {
+    font-weight: 600;
+    color: var(--color-primary);
+    display: inline-block;
+    margin-bottom: 0.25rem;
+}
+
+.step-expression {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    margin-top: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    background: var(--color-bg);
+    border-radius: 0.5rem;
+    display: inline-block;
+}
+
+.step-result {
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-top: 0.25rem;
+}
+
+/* Final Result Special Box */
+.final-result {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+    color: white;
+}
+
+.final-result .result-label,
+.final-result .result-value {
+    color: white;
+}
+
+/* Responsive for mobile */
+@media (max-width: 480px) {
+    .key-btn {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.9rem;
+    }
+    .step-item {
+        padding: 0.5rem;
+    }
+    .steps-container {
+        max-height: 300px;
+    }
+}

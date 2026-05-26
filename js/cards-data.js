@@ -66,6 +66,34 @@ const CALCULATORS = [
         badge: "Numbers",
         link: "calculators/even-odd.html",
     },
+    {
+        title: "Coprime Checker",
+        description: "Check if two numbers are coprime (share no common factors other than 1).",
+        icon: "tabler:brand-codesandbox",
+        iconBg: "#E8D8F0",
+        iconColor: "#6E3482",
+        badge: "Numbers",
+        link: "calculators/coprime.html",
+    },
+    {
+        title: "BODMAS Calculator",
+        description: "Solve expressions with brackets, decimals, and all operators. Follows BODMAS/PEMDAS rule.",
+        icon: "tabler:math-function",
+        iconBg: "#E0E8F5",
+        iconColor: "#3456A4",
+        badge: "Algebra",
+        link: "calculators/bodmas.html",
+    },
+
+    {
+        title: "Profit & Loss",
+        description: "Calculate profit, loss, CP, SP, and percentages with step-by-step explanations.",
+        icon: "tabler:chart-line",
+        iconBg: "#E8F5E8",
+        iconColor: "#1A8A4A",
+        badge: "Business Math",
+        link: "calculators/profit-loss.html",
+    },
 
     // ── ADD MORE CALCULATORS BELOW THIS LINE ─────────────────
     // {

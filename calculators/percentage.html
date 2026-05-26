@@ -1,89 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Percentage Finder — MathHelper</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Percentage Finder — CalculatorPro</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
 
-  <link rel="stylesheet" href="../styles/theme.css" />
-  <link rel="stylesheet" href="../styles/calculator.css" />
-</head>
-<body>
+    <link rel="stylesheet" href="../styles/theme.css" />
+    <link rel="stylesheet" href="../styles/calculator.css" />
+  </head>
+  <body>
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
 
-  <div class="bg-blob bg-blob-1"></div>
-  <div class="bg-blob bg-blob-2"></div>
+    <nav class="navbar">
+      <a class="navbar-brand" href="../index.html">
+        <span class="navbar-brand-icon">
+          <span
+            class="iconify"
+            data-icon="tabler:calculator"
+            data-width="28"
+          ></span>
+        </span>
+        <span class="navbar-brand-name">CalculatorPro</span>
+      </a>
+      <span class="navbar-pill">Percentage Finder</span>
+    </nav>
 
-  <nav class="navbar">
-    <a class="navbar-brand" href="../index.html">
-      <span class="navbar-brand-icon">
-        <span class="iconify" data-icon="tabler:calculator" data-width="28"></span>
-      </span>
-      <span class="navbar-brand-name">MathHelper</span>
-    </a>
-    <span class="navbar-pill">Percentage Finder</span>
-  </nav>
-
-  <main class="calc-container">
-    <div class="calc-header">
-      <div class="calc-icon" style="background: #D8F5E8">
-        <span class="iconify" data-icon="tabler:percent" data-width="36" data-height="36" style="color: #1A8A4A"></span>
-      </div>
-      <h1 class="calc-title">Percentage Finder</h1>
-      <p class="calc-desc">Find what percent X is of Y, or calculate X% of any number.</p>
-    </div>
-
-    <div class="calc-card-single">
-      <!-- Tabs -->
-      <div class="tab-bar">
-        <button class="tab-btn active" data-tab="whatpercent" onclick="switchTab('whatpercent')">
-          <span class="iconify" data-icon="tabler:question-mark" data-width="16"></span>
-          X is what % of Y?
-        </button>
-        <button class="tab-btn" data-tab="percentof" onclick="switchTab('percentof')">
-          <span class="iconify" data-icon="tabler:percent" data-width="16"></span>
-          X% of Y is?
-        </button>
+    <main class="calc-container">
+      <div class="calc-header">
+        <div class="calc-icon" style="background: #d8f5e8">
+          <span
+            class="iconify"
+            data-icon="tabler:percent"
+            data-width="36"
+            data-height="36"
+            style="color: #1a8a4a"
+          ></span>
+        </div>
+        <h1 class="calc-title">Percentage Finder</h1>
+        <p class="calc-desc">
+          Find what percent X is of Y, or calculate X% of any number.
+        </p>
       </div>
 
-      <!-- Panel 1: What percent -->
-      <div id="panel-whatpercent" class="tab-panel">
-        <label class="input-label">X (Part)</label>
-        <input type="number" id="wp-x" class="calc-input" placeholder="e.g., 25" step="any" />
+      <div class="calc-card-single">
+        <!-- Tabs -->
+        <div class="tab-bar">
+          <button
+            class="tab-btn active"
+            data-tab="whatpercent"
+            onclick="switchTab('whatpercent')"
+          >
+            <span
+              class="iconify"
+              data-icon="tabler:question-mark"
+              data-width="16"
+            ></span>
+            X is what % of Y?
+          </button>
+          <button
+            class="tab-btn"
+            data-tab="percentof"
+            onclick="switchTab('percentof')"
+          >
+            <span
+              class="iconify"
+              data-icon="tabler:percent"
+              data-width="16"
+            ></span>
+            X% of Y is?
+          </button>
+        </div>
 
-        <label class="input-label mt-3">Y (Whole)</label>
-        <input type="number" id="wp-y" class="calc-input" placeholder="e.g., 200" step="any" />
+        <!-- Panel 1: What percent -->
+        <div id="panel-whatpercent" class="tab-panel">
+          <label class="input-label">X (Part)</label>
+          <input
+            type="number"
+            id="wp-x"
+            class="calc-input"
+            placeholder="e.g., 25"
+            step="any"
+          />
 
-        <button onclick="calculatePercentage('whatpercent')" class="calc-btn">
-          <span class="iconify" data-icon="tabler:percent" data-width="18"></span>
-          Find Percentage
-        </button>
+          <label class="input-label mt-3">Y (Whole)</label>
+          <input
+            type="number"
+            id="wp-y"
+            class="calc-input"
+            placeholder="e.g., 200"
+            step="any"
+          />
+
+          <button onclick="calculatePercentage('whatpercent')" class="calc-btn">
+            <span
+              class="iconify"
+              data-icon="tabler:percent"
+              data-width="18"
+            ></span>
+            Find Percentage
+          </button>
+        </div>
+
+        <!-- Panel 2: Percent of -->
+        <div id="panel-percentof" class="tab-panel hidden">
+          <label class="input-label">Percentage (X%)</label>
+          <input
+            type="number"
+            id="po-pct"
+            class="calc-input"
+            placeholder="e.g., 15"
+            step="any"
+          />
+
+          <label class="input-label mt-3">Number (Y)</label>
+          <input
+            type="number"
+            id="po-y"
+            class="calc-input"
+            placeholder="e.g., 300"
+            step="any"
+          />
+
+          <button onclick="calculatePercentage('percentof')" class="calc-btn">
+            <span
+              class="iconify"
+              data-icon="tabler:math"
+              data-width="18"
+            ></span>
+            Calculate
+          </button>
+        </div>
+
+        <div id="result-area" class="result-area"></div>
       </div>
+    </main>
 
-      <!-- Panel 2: Percent of -->
-      <div id="panel-percentof" class="tab-panel hidden">
-        <label class="input-label">Percentage (X%)</label>
-        <input type="number" id="po-pct" class="calc-input" placeholder="e.g., 15" step="any" />
+    <footer class="site-footer">Made for Class 6 &amp; 7 students</footer>
 
-        <label class="input-label mt-3">Number (Y)</label>
-        <input type="number" id="po-y" class="calc-input" placeholder="e.g., 300" step="any" />
-
-        <button onclick="calculatePercentage('percentof')" class="calc-btn">
-          <span class="iconify" data-icon="tabler:math" data-width="18"></span>
-          Calculate
-        </button>
-      </div>
-
-      <div id="result-area" class="result-area"></div>
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    Made for Class 6 &amp; 7 students
-  </footer>
-
-  <script src="../js/calculators/percentage.js"></script>
-</body>
+    <script src="../js/calculators/percentage.js"></script>
+  </body>
 </html>

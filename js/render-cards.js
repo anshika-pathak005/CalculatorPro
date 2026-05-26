@@ -1,7 +1,6 @@
 /* ============================================================
    render-cards.js — Reads CALCULATORS array from cards-data.js
    and builds the homepage card grid.
-   DO NOT EDIT unless you want to change the card HTML layout.
    ============================================================ */
 
 function renderCards() {

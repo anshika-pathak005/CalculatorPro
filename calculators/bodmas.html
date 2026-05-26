@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BODMAS Calculator — CalculatorPro</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Iconify CDN -->
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+
+    <!-- Styles - Common first, then specific -->
+    <link rel="stylesheet" href="../styles/theme.css" />
+    <link rel="stylesheet" href="../styles/calculator.css" />
+    <link rel="stylesheet" href="../styles/bodmas.css" />
+    <!-- NEW: Only for BODMAS -->
+  </head>
+  <body>
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a class="navbar-brand" href="../index.html">
+        <span class="navbar-brand-icon">
+          <span
+            class="iconify"
+            data-icon="tabler:calculator"
+            data-width="28"
+          ></span>
+        </span>
+        <span class="navbar-brand-name">CalculatorPro</span>
+      </a>
+      <span class="navbar-pill">BODMAS Calculator</span>
+    </nav>
+
+    <!-- Calculator Main Section -->
+    <main class="calc-container">
+      <div class="calc-header">
+        <div class="calc-icon" style="background: #e0e8f5">
+          <span
+            class="iconify"
+            data-icon="tabler:math-function"
+            data-width="36"
+            data-height="36"
+            style="color: #3456a4"
+          ></span>
+        </div>
+        <h1 class="calc-title">BODMAS Calculator</h1>
+        <p class="calc-desc">
+          Enter expressions with brackets, decimals, and all operators. Follows
+          BODMAS rule.
+        </p>
+      </div>
+
+      <div class="calc-card-single">
+        <!-- Expression Input -->
+        <label class="input-label">
+          <span class="iconify" data-icon="tabler:math" data-width="18"></span>
+          Mathematical Expression
+        </label>
+        <input
+          type="text"
+          id="expression-input"
+          class="calc-input expression-input"
+          placeholder="e.g., 2 + (3 × 4) - 8 ÷ 2"
+        />
+
+        <!-- Custom Keypad -->
+        <div class="keypad">
+          <!-- Row 1: Brackets and Clear -->
+          <div class="keypad-row">
+            <button class="key-btn" data-value="(">(</button>
+            <button class="key-btn" data-value=")">)</button>
+            <button class="key-btn" data-value="[">[</button>
+            <button class="key-btn" data-value="]">]</button>
+            <button class="key-btn" data-value="{">{</button>
+            <button class="key-btn" data-value="}">}</button>
+            <button class="key-btn clear-btn" onclick="clearExpression()">
+              AC
+            </button>
+            <button class="key-btn backspace-btn" onclick="backspace()">
+              ⌫
+            </button>
+          </div>
+
+          <!-- Row 2: Numbers -->
+          <div class="keypad-row">
+            <button class="key-btn num-btn" data-value="7">7</button>
+            <button class="key-btn num-btn" data-value="8">8</button>
+            <button class="key-btn num-btn" data-value="9">9</button>
+            <button class="key-btn op-btn" data-value="÷">÷</button>
+            <button class="key-btn op-btn" data-value="×">×</button>
+          </div>
+
+          <!-- Row 3: Numbers -->
+          <div class="keypad-row">
+            <button class="key-btn num-btn" data-value="4">4</button>
+            <button class="key-btn num-btn" data-value="5">5</button>
+            <button class="key-btn num-btn" data-value="6">6</button>
+            <button class="key-btn op-btn" data-value="+">+</button>
+            <button class="key-btn op-btn" data-value="-">-</button>
+          </div>
+
+          <!-- Row 4: Numbers and Decimal -->
+          <div class="keypad-row">
+            <button class="key-btn num-btn" data-value="1">1</button>
+            <button class="key-btn num-btn" data-value="2">2</button>
+            <button class="key-btn num-btn" data-value="3">3</button>
+            <button class="key-btn" data-value=".">.</button>
+            <button class="key-btn" data-value="^">^</button>
+          </div>
+
+          <!-- Row 5: Zero and Calculate -->
+          <div class="keypad-row">
+            <button class="key-btn num-btn" data-value="0">0</button>
+            <button class="key-btn" data-value="00">00</button>
+            <button class="key-btn" data-value="%">%</button>
+            <button
+              class="key-btn calculate-btn"
+              onclick="calculateExpression()"
+              style="flex: 2"
+            >
+              = Calculate
+            </button>
+          </div>
+        </div>
+
+        <!-- Step-by-step result -->
+        <div id="result-area" class="result-area"></div>
+      </div>
+    </main>
+
+    <footer class="site-footer">Made for Class 6 &amp; 7 students</footer>
+
+    <script src="../js/calculators/bodmas.js"></script>
+  </body>
+</html>

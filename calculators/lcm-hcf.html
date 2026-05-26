@@ -1,72 +1,134 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LCM & HCF Calculator — MathHelper</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LCM & HCF Calculator — CalculatorPro</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
 
-  <link rel="stylesheet" href="../styles/theme.css" />
-  <link rel="stylesheet" href="../styles/calculator.css" />
-</head>
-<body>
+    <link rel="stylesheet" href="../styles/theme.css" />
+    <link rel="stylesheet" href="../styles/calculator.css" />
+  </head>
+  <body>
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
 
-  <div class="bg-blob bg-blob-1"></div>
-  <div class="bg-blob bg-blob-2"></div>
+    <nav class="navbar">
+      <a class="navbar-brand" href="../index.html">
+        <span class="navbar-brand-icon">
+          <span
+            class="iconify"
+            data-icon="tabler:calculator"
+            data-width="28"
+          ></span>
+        </span>
+        <span class="navbar-brand-name">CalculatorPro</span>
+      </a>
+      <span class="navbar-pill">LCM & HCF</span>
+    </nav>
 
-  <nav class="navbar">
-    <a class="navbar-brand" href="../index.html">
-      <span class="navbar-brand-icon">
-        <span class="iconify" data-icon="tabler:calculator" data-width="28"></span>
-      </span>
-      <span class="navbar-brand-name">MathHelper</span>
-    </a>
-    <span class="navbar-pill">LCM & HCF</span>
-  </nav>
-
-  <main class="calc-container">
-    <div class="calc-header">
-      <div class="calc-icon" style="background: #DDE8FB">
-        <span class="iconify" data-icon="tabler:arrows-join" data-width="36" data-height="36" style="color: #3456A4"></span>
+    <main class="calc-container">
+      <div class="calc-header">
+        <div class="calc-icon" style="background: #dde8fb">
+          <span
+            class="iconify"
+            data-icon="tabler:arrows-join"
+            data-width="36"
+            data-height="36"
+            style="color: #3456a4"
+          ></span>
+        </div>
+        <h1 class="calc-title">LCM & HCF Calculator</h1>
+        <p class="calc-desc">
+          Calculate Least Common Multiple and Highest Common Factor for multiple
+          numbers.
+        </p>
       </div>
-      <h1 class="calc-title">LCM & HCF Calculator</h1>
-      <p class="calc-desc">Calculate Least Common Multiple and Highest Common Factor for 2 or 3 numbers.</p>
-    </div>
 
-    <div class="calc-card-single">
-      <label class="input-label">
-        <span class="iconify" data-icon="tabler:number-1" data-width="18"></span>
-        First Number
-      </label>
-      <input type="number" id="num1" class="calc-input" placeholder="e.g., 12" />
+      <div class="calc-card-single">
+        <div class="section-title">
+          <span
+            class="iconify"
+            data-icon="tabler:numbers"
+            data-width="20"
+          ></span>
+          Enter Numbers
+        </div>
 
-      <label class="input-label mt-3">
-        <span class="iconify" data-icon="tabler:number-2" data-width="18"></span>
-        Second Number
-      </label>
-      <input type="number" id="num2" class="calc-input" placeholder="e.g., 18" />
+        <!-- Dynamic Inputs Container -->
+        <div id="inputs-container">
+          <div class="number-input-group" data-index="0">
+            <label class="input-label">
+              <span
+                class="iconify"
+                data-icon="tabler:number-1"
+                data-width="18"
+              ></span>
+              Number 1
+            </label>
+            <input
+              type="number"
+              id="num-0"
+              class="calc-input"
+              placeholder="e.g., 12"
+            />
+          </div>
+          <div class="number-input-group" data-index="1">
+            <label class="input-label">
+              <span
+                class="iconify"
+                data-icon="tabler:number-2"
+                data-width="18"
+              ></span>
+              Number 2
+            </label>
+            <input
+              type="number"
+              id="num-1"
+              class="calc-input"
+              placeholder="e.g., 18"
+            />
+          </div>
+        </div>
 
-      <label class="input-label mt-3">
-        <span class="iconify" data-icon="tabler:number-3" data-width="18"></span>
-        Third Number (optional)
-      </label>
-      <input type="number" id="num3" class="calc-input" placeholder="Leave empty for 2 numbers" />
+        <!-- Add More Button -->
+        <button
+          onclick="addNumberInput()"
+          class="calc-btn-secondary"
+          style="margin-top: 1rem"
+        >
+          <span class="iconify" data-icon="tabler:plus" data-width="18"></span>
+          Add Another Number
+        </button>
 
-      <button onclick="calculateLCMHCF()" class="calc-btn">
-        <span class="iconify" data-icon="tabler:calculator" data-width="18"></span>
-        Calculate LCM & HCF
-      </button>
+        <!-- Calculate Button -->
+        <button onclick="calculateLCMHCF()" class="calc-btn">
+          <span
+            class="iconify"
+            data-icon="tabler:calculator"
+            data-width="18"
+          ></span>
+          Calculate LCM & HCF
+        </button>
 
-      <div id="result-area" class="result-area"></div>
-    </div>
-  </main>
+        <!-- Clear All Button -->
+        <button
+          onclick="clearAllInputs()"
+          class="calc-btn-clear"
+          style="margin-top: 0.75rem"
+        >
+          <span class="iconify" data-icon="tabler:trash" data-width="18"></span>
+          Clear All Numbers
+        </button>
 
-  <footer class="site-footer">
-    Made for Class 6 &amp; 7 students
-  </footer>
+        <div id="result-area" class="result-area"></div>
+      </div>
+    </main>
 
-  <script src="../js/calculators/lcm-hcf.js"></script>
-</body>
+    <footer class="site-footer">Made for Class 6 &amp; 7 students</footer>
+
+    <script src="../js/calculators/lcm-hcf.js"></script>
+  </body>
 </html>

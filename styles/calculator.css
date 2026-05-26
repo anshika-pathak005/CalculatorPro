@@ -85,6 +85,7 @@
 
 /* Card Style */
 .calc-card-single {
+    margin-top: 1rem;
   background: var(--color-white);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
@@ -147,6 +148,96 @@
   box-shadow: var(--shadow-md);
 }
 
+/* Secondary Button (Add More) */
+.calc-btn-secondary {
+  width: 100%;
+  padding: 0.7rem 1.5rem;
+  background: var(--color-surface);
+  color: var(--color-secondary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: var(--font-body);
+}
+
+.calc-btn-secondary:hover {
+  background: var(--color-secondary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Clear Button */
+.calc-btn-clear {
+  width: 100%;
+  padding: 0.7rem 1.5rem;
+  background: transparent;
+  color: var(--color-muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 1.5px solid var(--color-surface);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: var(--font-body);
+}
+
+.calc-btn-clear:hover {
+  background: var(--color-error-bg);
+  border-color: var(--color-error-border);
+  color: var(--color-error-fg);
+}
+
+/* Remove Button for individual inputs */
+.remove-btn {
+  background: var(--color-error-bg);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-error-fg);
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+
+.remove-btn:hover {
+  background: var(--color-error-border);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Number Input Group Animation */
+.number-input-group {
+    margin-top: 10px;
+  animation: slideIn 0.2s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Result Area */
 .result-area {
   margin-top: 1.5rem;
@@ -166,6 +257,9 @@
   letter-spacing: 0.05em;
   color: var(--color-secondary);
   margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .result-value {
@@ -331,4 +425,33 @@
     font-size: 0.7rem;
     padding: 0.5rem;
   }
+  .remove-btn {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* For the clear button */
+.calc-btn-clear {
+    width: 100%;
+    padding: 0.7rem 1.5rem;
+    background: transparent;
+    color: var(--color-muted);
+    font-weight: 600;
+    font-size: 0.85rem;
+    border: 1.5px solid var(--color-surface);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all var(--transition);
+    font-family: var(--font-body);
+}
+
+.calc-btn-clear:hover {
+    background: var(--color-error-bg);
+    border-color: var(--color-error-border);
+    color: var(--color-error-fg);
 }
