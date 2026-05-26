@@ -67,6 +67,15 @@ const CALCULATORS = [
         link: "calculators/bodmas.html",
     },
     {
+        title: "Decimal Calculator",
+        description: "Add, subtract, multiply, and divide decimal numbers with adjustable precision.",
+        icon: "tabler:numbers",
+        iconBg: "#D8E8F5",
+        iconColor: "#3456A4",
+        badge: "Decimals",
+        link: "calculators/decimal-calculator.html",
+    },
+    {
         title: "Percentage Finder",
         description: "Find what percent X is of Y, or calculate X% of any number instantly.",
         icon: "tabler:circle-percentage",

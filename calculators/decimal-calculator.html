@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decimal Calculator — MathHelper</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Iconify CDN -->
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles/theme.css" />
+  <link rel="stylesheet" href="../styles/calculator.css" />
+  <link rel="stylesheet" href="../styles/decimal-calculator.css" />
+</head>
+<body>
+
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="../index.html">
+      <span class="navbar-brand-icon">
+        <span class="iconify" data-icon="tabler:calculator" data-width="28"></span>
+      </span>
+      <span class="navbar-brand-name">MathHelper</span>
+    </a>
+    <span class="navbar-pill">Decimal Calculator</span>
+  </nav>
+
+  <!-- Calculator Main Section -->
+  <main class="calc-container">
+    <div class="calc-header">
+      <div class="calc-icon" style="background: #D8E8F5">
+        <span class="iconify" data-icon="tabler:numbers" data-width="36" data-height="36" style="color: #3456A4"></span>
+      </div>
+      <h1 class="calc-title">Decimal Calculator</h1>
+      <p class="calc-desc">Add, subtract, multiply, and divide decimal numbers with precision.</p>
+    </div>
+
+    <div class="calc-card-single">
+      <!-- Operation Selector -->
+      <div class="operation-selector">
+        <button class="op-card active" data-op="add" onclick="setDecimalOperator('add')">
+          <span class="iconify" data-icon="tabler:plus" data-width="24"></span>
+          <span>Addition</span>
+          <small>+</small>
+        </button>
+        <button class="op-card" data-op="subtract" onclick="setDecimalOperator('subtract')">
+          <span class="iconify" data-icon="tabler:minus" data-width="24"></span>
+          <span>Subtraction</span>
+          <small>−</small>
+        </button>
+        <button class="op-card" data-op="multiply" onclick="setDecimalOperator('multiply')">
+          <span class="iconify" data-icon="tabler:x" data-width="24"></span>
+          <span>Multiplication</span>
+          <small>×</small>
+        </button>
+        <button class="op-card" data-op="divide" onclick="setDecimalOperator('divide')">
+          <span class="iconify" data-icon="tabler:divide" data-width="24"></span>
+          <span>Division</span>
+          <small>÷</small>
+        </button>
+      </div>
+
+      <!-- Input Area -->
+      <div class="decimal-input-area">
+        <div class="input-group">
+          <label class="input-label">
+            <span class="iconify" data-icon="tabler:number-1" data-width="16"></span>
+            First Number
+          </label>
+          <input type="number" id="num1" class="calc-input decimal-input" placeholder="e.g., 12.5" step="any" value="12.5" />
+        </div>
+
+        <div class="operator-display" id="operator-display">
+          <span class="operator-symbol">+</span>
+        </div>
+
+        <div class="input-group">
+          <label class="input-label">
+            <span class="iconify" data-icon="tabler:number-2" data-width="16"></span>
+            Second Number
+          </label>
+          <input type="number" id="num2" class="calc-input decimal-input" placeholder="e.g., 3.2" step="any" value="3.2" />
+        </div>
+      </div>
+
+      <!-- Precision Selector -->
+      <div class="precision-section">
+        <label class="input-label">
+          <span class="iconify" data-icon="tabler:dots" data-width="16"></span>
+          Decimal Precision
+        </label>
+        <select id="precision" class="precision-select">
+          <option value="2">2 decimal places</option>
+          <option value="3" selected>3 decimal places</option>
+          <option value="4">4 decimal places</option>
+          <option value="5">5 decimal places</option>
+          <option value="6">6 decimal places</option>
+        </select>
+      </div>
+
+      <!-- Swap Button -->
+      <button onclick="swapDecimalNumbers()" class="swap-btn">
+        <span class="iconify" data-icon="tabler:arrows-exchange" data-width="18"></span>
+        Swap Numbers
+      </button>
+
+      <!-- Result Preview Box -->
+      <div class="result-preview-box" id="result-preview-box">
+        <div class="preview-label">
+          <span class="iconify" data-icon="tabler:eye" data-width="16"></span>
+          Result Preview
+        </div>
+        <div class="preview-expression" id="preview-expression">12.5 + 3.2</div>
+        <div class="preview-result" id="preview-result">
+          <span class="preview-value">15.700</span>
+        </div>
+      </div>
+
+      <!-- Detailed Result Area -->
+      <div id="result-area" class="result-area"></div>
+
+      <!-- Clear Button -->
+      <button onclick="clearDecimalAll()" class="calc-btn-clear" style="margin-top: 1rem;">
+        <span class="iconify" data-icon="tabler:trash" data-width="18"></span>
+        Clear All
+      </button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    Made for Class 6 &amp; 7 students
+  </footer>
+
+  <script src="../js/calculators/decimal-calculator.js"></script>
+</body>
+</html>
