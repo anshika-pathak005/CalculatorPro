@@ -156,6 +156,15 @@ const CALCULATORS = [
         badge: "Algebra",
         link: "calculators/equation-solver.html",
     },
+    {
+        title: "Root Calculator",
+        description: "Calculate square root, cube root, or nth root of any number. Handles positive, negative, and decimal numbers.",
+        icon: "tabler:square-root",
+        iconBg: "#E8E0F5",
+        iconColor: "#6E3482",
+        badge: "Algebra",
+        link: "calculators/root-calculator.html",
+    },
 
     // ── ADD MORE CALCULATORS BELOW THIS LINE ─────────────────
     // {
