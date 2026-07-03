@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Root Calculator — MathHelper</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Iconify CDN -->
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles/theme.css" />
+  <link rel="stylesheet" href="../styles/calculator.css" />
+  <link rel="stylesheet" href="../styles/root-calculator.css" />
+</head>
+<body>
+
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="../index.html">
+      <span class="navbar-brand-icon">
+        <span class="iconify" data-icon="tabler:calculator" data-width="28"></span>
+      </span>
+      <span class="navbar-brand-name">MathHelper</span>
+    </a>
+    <span class="navbar-pill">Root Calculator</span>
+  </nav>
+
+  <!-- Calculator Main Section -->
+  <main class="calc-container">
+    <div class="calc-header">
+      <div class="calc-icon" style="background: #E8E0F5">
+        <span class="iconify" data-icon="tabler:square-root" data-width="36" data-height="36" style="color: #6E3482"></span>
+      </div>
+      <h1 class="calc-title">Root Calculator</h1>
+      <p class="calc-desc">Calculate square root, cube root, or nth root of any number.</p>
+    </div>
+
+    <div class="calc-card-single">
+      <!-- Root Type Selector -->
+      <div class="root-type-selector">
+        <button class="root-type-btn active" data-type="square" onclick="setRootType('square')">
+          <span class="iconify" data-icon="tabler:square-root" data-width="22"></span>
+          <span>Square Root</span>
+          <small>√x</small>
+        </button>
+        <button class="root-type-btn" data-type="cube" onclick="setRootType('cube')">
+          <span class="iconify" data-icon="tabler:cube" data-width="22"></span>
+          <span>Cube Root</span>
+          <small>∛x</small>
+        </button>
+        <button class="root-type-btn" data-type="nth" onclick="setRootType('nth')">
+          <span class="iconify" data-icon="tabler:math" data-width="22"></span>
+          <span>nth Root</span>
+          <small>ⁿ√x</small>
+        </button>
+      </div>
+
+      <!-- Input Section -->
+      <div class="input-section">
+        <div class="input-group">
+          <label class="input-label">
+            <span class="iconify" data-icon="tabler:numbers" data-width="16"></span>
+            Enter Number (x)
+          </label>
+          <input type="number" id="number-input" class="calc-input root-input" placeholder="e.g., 16" value="16" step="any" />
+        </div>
+
+        <!-- nth Root Input (hidden by default) -->
+        <div class="input-group nth-input-group hidden" id="nth-input-group">
+          <label class="input-label">
+            <span class="iconify" data-icon="tabler:number" data-width="16"></span>
+            Enter Root (n)
+          </label>
+          <input type="number" id="root-input" class="calc-input root-input" placeholder="e.g., 4" value="3" step="1" min="1" />
+          <div class="input-hint">n must be a positive integer (1, 2, 3, ...)</div>
+        </div>
+      </div>
+
+      <!-- Result Preview Box -->
+      <div class="result-preview-box" id="result-preview-box">
+        <div class="preview-label">
+          <span class="iconify" data-icon="tabler:eye" data-width="16"></span>
+          Result Preview
+        </div>
+        <div class="preview-result" id="preview-result">
+          <span class="placeholder">Enter a number to see result</span>
+        </div>
+      </div>
+
+      <!-- Detailed Result Area -->
+      <div id="result-area" class="result-area"></div>
+
+      <!-- Clear Button -->
+      <button onclick="clearRoot()" class="calc-btn-clear" style="margin-top: 1rem;">
+        <span class="iconify" data-icon="tabler:trash" data-width="18"></span>
+        Clear All
+      </button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    Made for Class 6 &amp; 7 students
+  </footer>
+
+  <script src="../js/calculators/root-calculator.js"></script>
+</body>
+</html>
