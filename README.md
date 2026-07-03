@@ -1,4 +1,4 @@
-# CalculatorPro
+# CalculatorPro Project
 
 A student-friendly mathematics toolkit built using HTML, CSS, and JavaScript.
 
