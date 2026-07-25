@@ -15,6 +15,10 @@
   <!-- Our styles (order matters: theme first) -->
   <link rel="stylesheet" href="styles/theme.css" />
   <link rel="stylesheet" href="styles/cards.css" />
+
+  <!-- Manifest and theme (for PWA) -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1d1d1d">
 </head>
 
 <body>
@@ -61,6 +65,13 @@
   <!-- Scripts: data first, renderer second -->
   <script src="js/cards-data.js"></script>
   <script src="js/render-cards.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("service-worker.js");
+      });
+    }
+  </script>
 </body>
 
 </html>

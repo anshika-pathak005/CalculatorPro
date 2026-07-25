@@ -1,0 +1,23 @@
+{
+    "name": "Calculator Pro",
+    "short_name": "Calculator",
+    "description": "A beautiful scientific calculator.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#1d1d1d",
+    "theme_color": "#1d1d1d",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "icons/calc icon1.jpg",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/calc icon 2.jpg",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
