@@ -1,5 +1,5 @@
 /* ============================================================
-   equivalent-fraction.js — Equivalent Fraction Calculator
+   equivalent-fraction.js- Equivalent Fraction Calculator
    Shows equivalents by multiplication and division
    ============================================================ */
 

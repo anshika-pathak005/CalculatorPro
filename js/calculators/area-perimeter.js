@@ -1,5 +1,5 @@
 /* ============================================================
-   area-perimeter.js — Complete Area, Perimeter & Volume Calculator
+   area-perimeter.js- Complete Area, Perimeter & Volume Calculator
    Supports: 10x 2D shapes + 6x 3D shapes
    ============================================================ */
 
@@ -494,7 +494,7 @@ function showFormulaReference(shapeId) {
     } else {
         const sample = shape.calculate({ radius: 1, height: 1, side: 1 });
         formulasHtml = `
-            <div>🧊 <strong>${shape.name} Formulas:</strong></div>
+            <div><strong>${shape.name} Formulas:</strong></div>
             <div>• Volume = ${sample.formulas.volume || 'N/A'}</div>
         `;
         if (sample.formulas.surfaceArea) {

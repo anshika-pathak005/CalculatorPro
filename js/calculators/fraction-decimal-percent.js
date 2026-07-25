@@ -1,5 +1,5 @@
 /* ============================================================
-   fraction-decimal-percent.js — Fraction ↔ Decimal ↔ Percent Converter
+   fraction-decimal-percent.js- Fraction ↔ Decimal ↔ Percent Converter
    Enter any one value, get all three instantly!
    ============================================================ */
 

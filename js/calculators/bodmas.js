@@ -1,5 +1,5 @@
 /* ============================================================
-   bodmas.js — BODMAS/PEMDAS Calculator with step-by-step evaluation
+   bodmas.js- BODMAS/PEMDAS Calculator with step-by-step evaluation
    ============================================================ */
 
 // Add keypad listeners

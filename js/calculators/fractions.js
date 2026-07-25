@@ -1,5 +1,5 @@
 /* ============================================================
-   fractions.js — Logic for Fraction Simplifier
+   fractions.js- Logic for Fraction Simplifier
    ============================================================ */
 
 function gcd(a, b) {
@@ -14,11 +14,11 @@ function simplifyFraction() {
     const den = parseInt(document.getElementById("denominator").value.trim());
 
     if (isNaN(num) || isNaN(den)) {
-        area.innerHTML = `<div class="error-box">⚠️ Please enter both numerator and denominator.</div>`;
+        area.innerHTML = `<div class="error-box">Please enter both numerator and denominator.</div>`;
         return;
     }
     if (den === 0) {
-        area.innerHTML = `<div class="error-box">⚠️ Denominator cannot be zero — division by zero is undefined.</div>`;
+        area.innerHTML = `<div class="error-box">Denominator cannot be zero- division by zero is undefined.</div>`;
         return;
     }
 

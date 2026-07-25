@@ -1,67 +1,66 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CalculatorPro — Class 6 &amp; 7</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CalculatorPro- Class 6 &amp; 7</title>
 
-    <!-- Iconify — SVG icons CDN -->
-    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Our styles (order matters: theme first) -->
-    <link rel="stylesheet" href="styles/theme.css" />
-    <link rel="stylesheet" href="styles/cards.css" />
-  </head>
-  <body>
-    <!-- Decorative blobs (from theme.css) -->
-    <div class="bg-blob bg-blob-1"></div>
-    <div class="bg-blob bg-blob-2"></div>
+  <!-- Iconify- SVG icons CDN -->
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
 
-    <!-- ── NAVBAR ───────────────────────────────────────────── -->
-    <nav class="navbar">
-      <a class="navbar-brand" href="index.html">
-        <span class="navbar-brand-icon">
-          <span
-            class="iconify"
-            data-icon="tabler:calculator"
-            data-width="28"
-          ></span>
-        </span>
-        <span class="navbar-brand-name">CalculatorPro</span>
-      </a>
-      <span class="navbar-pill">For Students</span>
-    </nav>
+  <!-- Our styles (order matters: theme first) -->
+  <link rel="stylesheet" href="styles/theme.css" />
+  <link rel="stylesheet" href="styles/cards.css" />
+</head>
 
-    <!-- ── HERO ─────────────────────────────────────────────── -->
-    <header class="hero">
-      <div class="hero-tag">
-        <span class="badge">Your Math Buddy</span>
-      </div>
-      <h1 class="hero-title">
-        Math Calculators<br />
-        <span>Made Simple</span>
-      </h1>
-      <p class="hero-subtitle">
-        Pick a calculator below and solve problems step by step. Perfect for
-        Students!
-      </p>
-    </header>
+<body>
+  <!-- Decorative blobs (from theme.css) -->
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
 
-    <!-- ── CARDS GRID ───────────────────────────────────────── -->
-    <main class="cards-section">
-      <div id="cards-grid" class="cards-grid">
-        <!-- Injected by render-cards.js -->
-      </div>
-    </main>
+  <!-- ── NAVBAR ───────────────────────────────────────────── -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="index.html">
+      <span class="navbar-brand-icon">
+        <span class="iconify" data-icon="tabler:calculator" data-width="28"></span>
+      </span>
+      <span class="navbar-brand-name">CalculatorPro</span>
+    </a>
+    <span class="navbar-pill">For Students</span>
+  </nav>
 
-    <!-- ── FOOTER ───────────────────────────────────────────── -->
-    <footer class="site-footer">Made for Students</footer>
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <header class="hero">
+    <div class="hero-tag">
+      <span class="badge">Your Math Buddy</span>
+    </div>
+    <h1 class="hero-title">
+      Math Calculators<br />
+      <span>Made Simple</span>
+    </h1>
+    <p class="hero-subtitle">
+      Pick a calculator below and solve problems step by step. Perfect for
+      Students!
+    </p>
+  </header>
 
-    <!-- Scripts: data first, renderer second -->
-    <script src="js/cards-data.js"></script>
-    <script src="js/render-cards.js"></script>
-  </body>
+  <!-- ── CARDS GRID ───────────────────────────────────────── -->
+  <main class="cards-section">
+    <div id="cards-grid" class="cards-grid">
+      <!-- Injected by render-cards.js -->
+    </div>
+  </main>
+
+  <!-- ── FOOTER ───────────────────────────────────────────── -->
+  <footer class="site-footer">Made for Students</footer>
+
+  <!-- Scripts: data first, renderer second -->
+  <script src="js/cards-data.js"></script>
+  <script src="js/render-cards.js"></script>
+</body>
+
 </html>

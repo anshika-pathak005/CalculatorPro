@@ -1,302 +1,194 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profit & Loss Calculator — CalculatorPro</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profit & Loss Calculator- CalculatorPro</title>
 
-    <!-- Iconify CDN -->
-    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="../styles/theme.css" />
-    <link rel="stylesheet" href="../styles/calculator.css" />
-    <link rel="stylesheet" href="../styles/profit-loss.css" />
-  </head>
-  <body>
-    <div class="bg-blob bg-blob-1"></div>
-    <div class="bg-blob bg-blob-2"></div>
+  <!-- Iconify CDN -->
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-      <a class="navbar-brand" href="../index.html">
-        <span class="navbar-brand-icon">
-          <span
-            class="iconify"
-            data-icon="tabler:calculator"
-            data-width="28"
-          ></span>
-        </span>
-        <span class="navbar-brand-name">CalculatorPro</span>
-      </a>
-      <span class="navbar-pill">Profit & Loss</span>
-    </nav>
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles/theme.css" />
+  <link rel="stylesheet" href="../styles/calculator.css" />
+  <link rel="stylesheet" href="../styles/profit-loss.css" />
+</head>
 
-    <!-- Calculator Main Section -->
-    <main class="calc-container">
-      <div class="calc-header">
-        <div class="calc-icon" style="background: #e8f5e8">
-          <span
-            class="iconify"
-            data-icon="tabler:chart-line"
-            data-width="36"
-            data-height="36"
-            style="color: #1a8a4a"
-          ></span>
-        </div>
-        <h1 class="calc-title">Profit & Loss Calculator</h1>
-        <p class="calc-desc">
-          Calculate profit, loss, selling price, cost price, and percentages.
-        </p>
+<body>
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="../index.html">
+      <span class="navbar-brand-icon">
+        <span class="iconify" data-icon="tabler:calculator" data-width="28"></span>
+      </span>
+      <span class="navbar-brand-name">CalculatorPro</span>
+    </a>
+    <span class="navbar-pill">Profit & Loss</span>
+  </nav>
+
+  <!-- Calculator Main Section -->
+  <main class="calc-container">
+    <div class="calc-header">
+      <div class="calc-icon" style="background: #e8f5e8">
+        <span class="iconify" data-icon="tabler:chart-line" data-width="36" data-height="36"
+          style="color: #1a8a4a"></span>
+      </div>
+      <h1 class="calc-title">Profit & Loss Calculator</h1>
+      <p class="calc-desc">
+        Calculate profit, loss, selling price, cost price, and percentages.
+      </p>
+    </div>
+
+    <div class="calc-card-single">
+      <!-- Mode Selection Tabs -->
+      <div class="mode-tabs">
+        <button class="mode-tab active" data-mode="basic" onclick="switchMode('basic')">
+          <span class="iconify" data-icon="tabler:math" data-width="18"></span>
+          Basic P&L
+        </button>
+        <button class="mode-tab" data-mode="find-cp" onclick="switchMode('find-cp')">
+          <span class="iconify" data-icon="tabler:shopping-cart" data-width="18"></span>
+          Find CP
+        </button>
+        <button class="mode-tab" data-mode="find-sp" onclick="switchMode('find-sp')">
+          <span class="iconify" data-icon="tabler:currency-rupee" data-width="18"></span>
+          Find SP
+        </button>
+        <button class="mode-tab" data-mode="formulas" onclick="switchMode('formulas')">
+          <span class="iconify" data-icon="tabler:book" data-width="18"></span>
+          Formulas
+        </button>
       </div>
 
-      <div class="calc-card-single">
-        <!-- Mode Selection Tabs -->
-        <div class="mode-tabs">
-          <button
-            class="mode-tab active"
-            data-mode="basic"
-            onclick="switchMode('basic')"
-          >
-            <span
-              class="iconify"
-              data-icon="tabler:math"
-              data-width="18"
-            ></span>
-            Basic P&L
-          </button>
-          <button
-            class="mode-tab"
-            data-mode="find-cp"
-            onclick="switchMode('find-cp')"
-          >
-            <span
-              class="iconify"
-              data-icon="tabler:shopping-cart"
-              data-width="18"
-            ></span>
-            Find CP
-          </button>
-          <button
-            class="mode-tab"
-            data-mode="find-sp"
-            onclick="switchMode('find-sp')"
-          >
-            <span
-              class="iconify"
-              data-icon="tabler:currency-rupee"
-              data-width="18"
-            ></span>
-            Find SP
-          </button>
-          <button
-            class="mode-tab"
-            data-mode="formulas"
-            onclick="switchMode('formulas')"
-          >
-            <span
-              class="iconify"
-              data-icon="tabler:book"
-              data-width="18"
-            ></span>
-            Formulas
-          </button>
+      <!-- Mode 1: Basic Profit/Loss -->
+      <div id="mode-basic" class="mode-panel">
+        <div class="input-group">
+          <label class="input-label">
+            <span class="iconify" data-icon="tabler:tag" data-width="18"></span>
+            Cost Price (CP)
+          </label>
+          <input type="number" id="basic-cp" class="calc-input" placeholder="e.g., 500" step="any" />
         </div>
 
-        <!-- Mode 1: Basic Profit/Loss -->
-        <div id="mode-basic" class="mode-panel">
-          <div class="input-group">
-            <label class="input-label">
-              <span
-                class="iconify"
-                data-icon="tabler:tag"
-                data-width="18"
-              ></span>
-              Cost Price (CP)
-            </label>
-            <input
-              type="number"
-              id="basic-cp"
-              class="calc-input"
-              placeholder="e.g., 500"
-              step="any"
-            />
-          </div>
-
-          <div class="input-group">
-            <label class="input-label">
-              <span
-                class="iconify"
-                data-icon="tabler:currency-rupee"
-                data-width="18"
-              ></span>
-              Selling Price (SP)
-            </label>
-            <input
-              type="number"
-              id="basic-sp"
-              class="calc-input"
-              placeholder="e.g., 600"
-              step="any"
-            />
-          </div>
-
-          <button onclick="calculateBasicPL()" class="calc-btn">
-            <span
-              class="iconify"
-              data-icon="tabler:chart-line"
-              data-width="18"
-            ></span>
-            Calculate Profit/Loss
-          </button>
+        <div class="input-group">
+          <label class="input-label">
+            <span class="iconify" data-icon="tabler:currency-rupee" data-width="18"></span>
+            Selling Price (SP)
+          </label>
+          <input type="number" id="basic-sp" class="calc-input" placeholder="e.g., 600" step="any" />
         </div>
 
-        <!-- Mode 2: Find Cost Price -->
-        <div id="mode-find-cp" class="mode-panel hidden">
-          <div class="input-group">
-            <label class="input-label">
-              <span
-                class="iconify"
-                data-icon="tabler:currency-rupee"
-                data-width="18"
-              ></span>
-              Selling Price (SP)
-            </label>
-            <input
-              type="number"
-              id="findcp-sp"
-              class="calc-input"
-              placeholder="e.g., 450"
-              step="any"
-            />
-          </div>
-
-          <div class="input-group">
-            <label class="input-label">
-              <span
-                class="iconify"
-                data-icon="tabler:chart-line"
-                data-width="18"
-              ></span>
-              Profit/Loss Amount
-            </label>
-            <input
-              type="number"
-              id="findcp-pl"
-              class="calc-input"
-              placeholder="e.g., 50 (positive=profit, negative=loss)"
-              step="any"
-            />
-          </div>
-
-          <button onclick="calculateCP()" class="calc-btn">
-            <span
-              class="iconify"
-              data-icon="tabler:search"
-              data-width="18"
-            ></span>
-            Find Cost Price
-          </button>
-        </div>
-
-        <!-- Mode 3: Find Selling Price -->
-        <div id="mode-find-sp" class="mode-panel hidden">
-          <div class="input-group">
-            <label class="input-label">
-              <span
-                class="iconify"
-                data-icon="tabler:tag"
-                data-width="18"
-              ></span>
-              Cost Price (CP)
-            </label>
-            <input
-              type="number"
-              id="findsp-cp"
-              class="calc-input"
-              placeholder="e.g., 800"
-              step="any"
-            />
-          </div>
-
-          <div class="input-group">
-            <label class="input-label">
-              <span
-                class="iconify"
-                data-icon="tabler:chart-line"
-                data-width="18"
-              ></span>
-              Profit/Loss Amount
-            </label>
-            <input
-              type="number"
-              id="findsp-pl"
-              class="calc-input"
-              placeholder="e.g., 120 (positive=profit, negative=loss)"
-              step="any"
-            />
-          </div>
-
-          <button onclick="calculateSP()" class="calc-btn">
-            <span
-              class="iconify"
-              data-icon="tabler:calculator"
-              data-width="18"
-            ></span>
-            Find Selling Price
-          </button>
-        </div>
-
-        <!-- Mode 4: Formulas Reference -->
-        <div id="mode-formulas" class="mode-panel hidden">
-          <div class="formulas-grid">
-            <div class="formula-card">
-              <div class="formula-title">Profit</div>
-              <div class="formula">Profit = SP - CP</div>
-              <div class="formula-note">(When SP > CP)</div>
-            </div>
-            <div class="formula-card">
-              <div class="formula-title">Loss</div>
-              <div class="formula">Loss = CP - SP</div>
-              <div class="formula-note">(When CP > SP)</div>
-            </div>
-            <div class="formula-card">
-              <div class="formula-title">Profit Percentage</div>
-              <div class="formula">Profit% = (Profit ÷ CP) × 100</div>
-            </div>
-            <div class="formula-card">
-              <div class="formula-title">Loss Percentage</div>
-              <div class="formula">Loss% = (Loss ÷ CP) × 100</div>
-            </div>
-            <div class="formula-card">
-              <div class="formula-title">Find SP (Profit)</div>
-              <div class="formula">SP = CP × (100 + P%) ÷ 100</div>
-            </div>
-            <div class="formula-card">
-              <div class="formula-title">Find SP (Loss)</div>
-              <div class="formula">SP = CP × (100 - L%) ÷ 100</div>
-            </div>
-            <div class="formula-card">
-              <div class="formula-title">Find CP (Profit)</div>
-              <div class="formula">CP = SP × 100 ÷ (100 + P%)</div>
-            </div>
-            <div class="formula-card">
-              <div class="formula-title">Find CP (Loss)</div>
-              <div class="formula">CP = SP × 100 ÷ (100 - L%)</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Result Area -->
-        <div id="result-area" class="result-area"></div>
+        <button onclick="calculateBasicPL()" class="calc-btn">
+          <span class="iconify" data-icon="tabler:chart-line" data-width="18"></span>
+          Calculate Profit/Loss
+        </button>
       </div>
-    </main>
 
-    <footer class="site-footer">Made for Class 6 &amp; 7 students</footer>
+      <!-- Mode 2: Find Cost Price -->
+      <div id="mode-find-cp" class="mode-panel hidden">
+        <div class="input-group">
+          <label class="input-label">
+            <span class="iconify" data-icon="tabler:currency-rupee" data-width="18"></span>
+            Selling Price (SP)
+          </label>
+          <input type="number" id="findcp-sp" class="calc-input" placeholder="e.g., 450" step="any" />
+        </div>
 
-    <script src="../js/calculators/profit-loss.js"></script>
-  </body>
+        <div class="input-group">
+          <label class="input-label">
+            <span class="iconify" data-icon="tabler:chart-line" data-width="18"></span>
+            Profit/Loss Amount
+          </label>
+          <input type="number" id="findcp-pl" class="calc-input" placeholder="e.g., 50 (positive=profit, negative=loss)"
+            step="any" />
+        </div>
+
+        <button onclick="calculateCP()" class="calc-btn">
+          <span class="iconify" data-icon="tabler:search" data-width="18"></span>
+          Find Cost Price
+        </button>
+      </div>
+
+      <!-- Mode 3: Find Selling Price -->
+      <div id="mode-find-sp" class="mode-panel hidden">
+        <div class="input-group">
+          <label class="input-label">
+            <span class="iconify" data-icon="tabler:tag" data-width="18"></span>
+            Cost Price (CP)
+          </label>
+          <input type="number" id="findsp-cp" class="calc-input" placeholder="e.g., 800" step="any" />
+        </div>
+
+        <div class="input-group">
+          <label class="input-label">
+            <span class="iconify" data-icon="tabler:chart-line" data-width="18"></span>
+            Profit/Loss Amount
+          </label>
+          <input type="number" id="findsp-pl" class="calc-input"
+            placeholder="e.g., 120 (positive=profit, negative=loss)" step="any" />
+        </div>
+
+        <button onclick="calculateSP()" class="calc-btn">
+          <span class="iconify" data-icon="tabler:calculator" data-width="18"></span>
+          Find Selling Price
+        </button>
+      </div>
+
+      <!-- Mode 4: Formulas Reference -->
+      <div id="mode-formulas" class="mode-panel hidden">
+        <div class="formulas-grid">
+          <div class="formula-card">
+            <div class="formula-title">Profit</div>
+            <div class="formula">Profit = SP - CP</div>
+            <div class="formula-note">(When SP > CP)</div>
+          </div>
+          <div class="formula-card">
+            <div class="formula-title">Loss</div>
+            <div class="formula">Loss = CP - SP</div>
+            <div class="formula-note">(When CP > SP)</div>
+          </div>
+          <div class="formula-card">
+            <div class="formula-title">Profit Percentage</div>
+            <div class="formula">Profit% = (Profit ÷ CP) × 100</div>
+          </div>
+          <div class="formula-card">
+            <div class="formula-title">Loss Percentage</div>
+            <div class="formula">Loss% = (Loss ÷ CP) × 100</div>
+          </div>
+          <div class="formula-card">
+            <div class="formula-title">Find SP (Profit)</div>
+            <div class="formula">SP = CP × (100 + P%) ÷ 100</div>
+          </div>
+          <div class="formula-card">
+            <div class="formula-title">Find SP (Loss)</div>
+            <div class="formula">SP = CP × (100 - L%) ÷ 100</div>
+          </div>
+          <div class="formula-card">
+            <div class="formula-title">Find CP (Profit)</div>
+            <div class="formula">CP = SP × 100 ÷ (100 + P%)</div>
+          </div>
+          <div class="formula-card">
+            <div class="formula-title">Find CP (Loss)</div>
+            <div class="formula">CP = SP × 100 ÷ (100 - L%)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Result Area -->
+      <div id="result-area" class="result-area"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">Made for Class 6 &amp; 7 students</footer>
+
+  <script src="../js/calculators/profit-loss.js"></script>
+</body>
+
 </html>

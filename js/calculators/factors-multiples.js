@@ -1,5 +1,5 @@
 /* ============================================================
-   factors-multiples.js — Logic for Factors & Multiples
+   factors-multiples.js- Logic for Factors & Multiples
    ============================================================ */
 
 function findFactors() {

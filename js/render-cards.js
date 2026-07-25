@@ -1,13 +1,13 @@
 /* ============================================================
-   render-cards.js — Reads CALCULATORS array from cards-data.js
+   render-cards.js- Reads CALCULATORS array from cards-data.js
    and builds the homepage card grid.
    ============================================================ */
 
 function renderCards() {
-    const grid = document.getElementById("cards-grid");
-    if (!grid) return;
+  const grid = document.getElementById("cards-grid");
+  if (!grid) return;
 
-    grid.innerHTML = CALCULATORS.map(c => `
+  grid.innerHTML = CALCULATORS.map(c => `
     <a class="calc-card" href="${c.link}" title="${c.title}">
       <div class="card-icon" style="background:${c.iconBg}">
         <span

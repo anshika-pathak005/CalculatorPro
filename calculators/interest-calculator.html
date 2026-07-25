@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple &amp; Compound Interest- CalculatorPro</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+
+  <link rel="stylesheet" href="../styles/theme.css" />
+  <link rel="stylesheet" href="../styles/calculator.css" />
+</head>
+
+<body>
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+
+  <nav class="navbar">
+    <a class="navbar-brand" href="../index.html">
+      <span class="navbar-brand-icon">
+        <span class="iconify" data-icon="tabler:calculator" data-width="28"></span>
+      </span>
+      <span class="navbar-brand-name">CalculatorPro</span>
+    </a>
+    <span class="navbar-pill">Interest Calculator</span>
+  </nav>
+
+  <main class="calc-container">
+    <div class="calc-header">
+      <div class="calc-icon" style="background: #e8f5e8">
+        <span class="iconify" data-icon="tabler:businessplan" data-width="36" data-height="36"
+          style="color: #1a8a4a"></span>
+      </div>
+      <h1 class="calc-title">Simple &amp; Compound Interest</h1>
+      <p class="calc-desc">
+        Calculate interest, total amount, principal, rate, or time with step-by-step Class 7 &amp; 8 formulas.
+      </p>
+    </div>
+
+    <div class="calc-card-single">
+      <!-- Mode Tabs -->
+      <div class="tab-bar">
+        <button class="tab-btn active" data-tab="simple" onclick="switchInterestTab('simple')">
+          <span class="iconify" data-icon="tabler:percentage" data-width="16"></span>
+          Simple Interest (SI)
+        </button>
+        <button class="tab-btn" data-tab="compound" onclick="switchInterestTab('compound')">
+          <span class="iconify" data-icon="tabler:chart-line" data-width="16"></span>
+          Compound Interest (CI)
+        </button>
+      </div>
+
+      <!-- Panel 1: Simple Interest -->
+      <div id="panel-simple" class="tab-panel">
+        <label class="input-label">Principal Amount (P)</label>
+        <input type="number" id="si-p" class="calc-input" placeholder="e.g., 1000" step="any" />
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+          <div>
+            <label class="input-label">Rate of Interest per year (R %)</label>
+            <input type="number" id="si-r" class="calc-input" placeholder="e.g., 5" step="any" />
+          </div>
+          <div>
+            <label class="input-label">Time Period (T in Years)</label>
+            <input type="number" id="si-t" class="calc-input" placeholder="e.g., 3" step="any" />
+          </div>
+        </div>
+
+        <button onclick="calculateSI()" class="calc-btn">
+          <span class="iconify" data-icon="tabler:calculator" data-width="18"></span>
+          Calculate Simple Interest
+        </button>
+      </div>
+
+      <!-- Panel 2: Compound Interest -->
+      <div id="panel-compound" class="tab-panel hidden">
+        <label class="input-label">Principal Amount (P)</label>
+        <input type="number" id="ci-p" class="calc-input" placeholder="e.g., 5000" step="any" />
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+          <div>
+            <label class="input-label">Annual Interest Rate (R %)</label>
+            <input type="number" id="ci-r" class="calc-input" placeholder="e.g., 10" step="any" />
+          </div>
+          <div>
+            <label class="input-label">Time Period (T in Years)</label>
+            <input type="number" id="ci-t" class="calc-input" placeholder="e.g., 2" step="any" />
+          </div>
+        </div>
+
+        <label class="input-label mt-3">Compounding Frequency (n)</label>
+        <select id="ci-n" class="calc-input">
+          <option value="1">Compounded Annually (n = 1)</option>
+          <option value="2">Compounded Half-Yearly / Semi-Annually (n = 2)</option>
+          <option value="4">Compounded Quarterly (n = 4)</option>
+          <option value="12">Compounded Monthly (n = 12)</option>
+        </select>
+
+        <button onclick="calculateCI()" class="calc-btn">
+          <span class="iconify" data-icon="tabler:chart-line" data-width="18"></span>
+          Calculate Compound Interest
+        </button>
+      </div>
+
+      <div id="result-area" class="result-area"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">Made for Class 7 &amp; 8 Math Students</footer>
+
+  <script src="../js/calculators/interest-calculator.js"></script>
+</body>
+
+</html>

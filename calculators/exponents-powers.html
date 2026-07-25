@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exponents &amp; Powers Calculator- CalculatorPro</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+
+  <link rel="stylesheet" href="../styles/theme.css" />
+  <link rel="stylesheet" href="../styles/calculator.css" />
+</head>
+
+<body>
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+
+  <nav class="navbar">
+    <a class="navbar-brand" href="../index.html">
+      <span class="navbar-brand-icon">
+        <span class="iconify" data-icon="tabler:calculator" data-width="28"></span>
+      </span>
+      <span class="navbar-brand-name">CalculatorPro</span>
+    </a>
+    <span class="navbar-pill">Exponents &amp; Powers</span>
+  </nav>
+
+  <main class="calc-container">
+    <div class="calc-header">
+      <div class="calc-icon" style="background: #e0e8f5">
+        <span class="iconify" data-icon="tabler:math-symbols" data-width="36" data-height="36"
+          style="color: #3456a4"></span>
+      </div>
+      <h1 class="calc-title">Exponents &amp; Powers</h1>
+      <p class="calc-desc">
+        Solve exponent operations ($a^m + b^n$, $a^m \times a^n$, laws of indices), scientific notation, and formulas!
+      </p>
+    </div>
+
+    <div class="calc-card-single">
+      <!-- Mode Tabs -->
+      <div class="tab-bar">
+        <button class="tab-btn active" data-tab="ops" onclick="switchExponentTab('ops')">
+          <span class="iconify" data-icon="tabler:math-function" data-width="16"></span>
+          Exponent Solver
+        </button>
+        <button class="tab-btn" data-tab="scientific" onclick="switchExponentTab('scientific')">
+          <span class="iconify" data-icon="tabler:arrows-diff" data-width="16"></span>
+          Scientific Notation
+        </button>
+        <button class="tab-btn" data-tab="formulas" onclick="switchExponentTab('formulas')">
+          <span class="iconify" data-icon="tabler:book" data-width="16"></span>
+          Exponent Rules
+        </button>
+      </div>
+
+      <!-- Panel 1: Exponent Solver -->
+      <div id="panel-ops" class="tab-panel">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="input-label">Base a</label>
+            <input type="number" id="exp-a" class="calc-input" placeholder="e.g., 2" step="any" />
+          </div>
+          <div>
+            <label class="input-label">Exponent m (Power)</label>
+            <input type="number" id="exp-m" class="calc-input" placeholder="e.g., 3" step="any" />
+          </div>
+        </div>
+
+        <label class="input-label mt-4">Operation</label>
+        <select id="exp-op" class="calc-input" onchange="toggleSecondTerm()">
+          <option value="single">Single Power: aᵐ</option>
+          <option value="add">Addition: aᵐ + bⁿ</option>
+          <option value="sub">Subtraction: aᵐ - bⁿ</option>
+          <option value="mul">Multiplication (Same Base): aᵐ × aⁿ = aᵐ⁺ⁿ</option>
+          <option value="div">Division (Same Base): aᵐ ÷ aⁿ = aᵐ⁻ⁿ</option>
+          <option value="pow">Power of Power: (aᵐ)ⁿ = aᵐˣⁿ</option>
+        </select>
+
+        <!-- Second term fields (hidden by default unless operation needs b & n) -->
+        <div id="second-term-container" class="hidden mt-3 p-3 bg-purple-50 rounded-xl border border-purple-100">
+          <p class="text-xs font-bold text-purple-900 mb-2">Second Term Parameters (b and n):</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="input-label">Base b</label>
+              <input type="number" id="exp-b" class="calc-input" placeholder="e.g., 3" step="any" />
+            </div>
+            <div>
+              <label class="input-label">Exponent n</label>
+              <input type="number" id="exp-n" class="calc-input" placeholder="e.g., 2" step="any" />
+            </div>
+          </div>
+        </div>
+
+        <button onclick="calculateExponent()" class="calc-btn">
+          <span class="iconify" data-icon="tabler:calculator" data-width="18"></span>
+          Evaluate Expression
+        </button>
+      </div>
+
+      <!-- Panel 2: Scientific Notation -->
+      <div id="panel-scientific" class="tab-panel hidden">
+        <label class="input-label">Standard Number to Convert</label>
+        <input type="number" id="sci-num" class="calc-input" placeholder="e.g., 4500000 or 0.00078" step="any" />
+
+        <button onclick="convertScientific()" class="calc-btn">
+          <span class="iconify" data-icon="tabler:transform" data-width="18"></span>
+          Convert to Scientific Notation
+        </button>
+      </div>
+
+      <!-- Panel 3: Formulas & Rules Cheat Sheet -->
+      <div id="panel-formulas" class="tab-panel hidden">
+        <div class="space-y-3 text-sm text-gray-700">
+          <div class="p-3 bg-indigo-50 border border-indigo-100 rounded-xl">
+            <span class="font-bold text-indigo-900">Product Law:</span> <code
+              class="font-mono bg-white px-2 py-0.5 rounded text-indigo-700">aᵐ × aⁿ = aᵐ⁺ⁿ</code>
+            <p class="text-xs text-indigo-800 mt-1">When multiplying powers with the same base, add their exponents.</p>
+          </div>
+
+          <div class="p-3 bg-purple-50 border border-purple-100 rounded-xl">
+            <span class="font-bold text-purple-900">Quotient Law:</span> <code
+              class="font-mono bg-white px-2 py-0.5 rounded text-purple-700">aᵐ ÷ aⁿ = aᵐ⁻ⁿ</code>
+            <p class="text-xs text-purple-800 mt-1">When dividing powers with the same base, subtract exponent of
+              denominator.</p>
+          </div>
+
+          <div class="p-3 bg-emerald-50 border border-emerald-100 rounded-xl">
+            <span class="font-bold text-emerald-900">Power of a Power:</span> <code
+              class="font-mono bg-white px-2 py-0.5 rounded text-emerald-700">(aᵐ)ⁿ = aᵐˣⁿ</code>
+            <p class="text-xs text-emerald-800 mt-1">To raise a power to a power, multiply the exponents.</p>
+          </div>
+
+          <div class="p-3 bg-amber-50 border border-amber-100 rounded-xl">
+            <span class="font-bold text-amber-900">Zero Exponent:</span> <code
+              class="font-mono bg-white px-2 py-0.5 rounded text-amber-700">a⁰ = 1</code>
+            <p class="text-xs text-amber-800 mt-1">Any non-zero base raised to power 0 equals 1.</p>
+          </div>
+
+          <div class="p-3 bg-rose-50 border border-rose-100 rounded-xl">
+            <span class="font-bold text-rose-900">Negative Exponent:</span> <code
+              class="font-mono bg-white px-2 py-0.5 rounded text-rose-700">a⁻ⁿ = 1 / aⁿ</code>
+            <p class="text-xs text-rose-800 mt-1">A negative exponent is equivalent to reciprocal with positive
+              exponent.</p>
+          </div>
+
+          <div class="p-3 bg-blue-50 border border-blue-100 rounded-xl">
+            <span class="font-bold text-blue-900">Power of a Product / Quotient:</span> <code
+              class="font-mono bg-white px-2 py-0.5 rounded text-blue-700">(ab)ⁿ = aⁿbⁿ , (a/b)ⁿ = aⁿ/bⁿ</code>
+            <p class="text-xs text-blue-800 mt-1">Power applies individually to both factors in multiplication or
+              division.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="result-area" class="result-area"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">Made for Class 7 &amp; 8 Math Students</footer>
+
+  <script src="../js/calculators/exponents-powers.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 /* ============================================================
-   profit-loss.js — Complete Profit & Loss Calculator
+   profit-loss.js- Complete Profit & Loss Calculator
    ============================================================ */
 
 // Switch between different modes
@@ -53,16 +53,15 @@ function calculateBasicPL() {
     let cardClass = '';
     let icon = '';
     let status = '';
-
     if (isProfit) {
         cardClass = 'profit-card';
-        icon = '📈';
+        icon = '';
         status = 'PROFIT';
         resultHtml = `
             <div class="result-box ${cardClass}">
                 <div class="result-label">
                     <span class="iconify" data-icon="tabler:trending-up" data-width="16"></span>
-                    ${icon} ${status}
+                    ${status}
                 </div>
                 <div class="result-amount profit-color">+ ₹${formatNumber(amount)}</div>
                 <div class="result-detail">Profit Percentage: <strong>${formatNumber(percentage)}%</strong></div>
@@ -82,13 +81,13 @@ function calculateBasicPL() {
         `;
     } else if (isLoss) {
         cardClass = 'loss-card';
-        icon = '📉';
+        icon = '';
         status = 'LOSS';
         resultHtml = `
             <div class="result-box ${cardClass}">
                 <div class="result-label">
                     <span class="iconify" data-icon="tabler:trending-down" data-width="16"></span>
-                    ${icon} ${status}
+                    ${status}
                 </div>
                 <div class="result-amount loss-color">- ₹${formatNumber(amount)}</div>
                 <div class="result-detail">Loss Percentage: <strong>${formatNumber(percentage)}%</strong></div>

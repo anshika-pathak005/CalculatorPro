@@ -1,5 +1,5 @@
 /* ============================================================
-   equation-solver.js — Solve linear equations and find x
+   equation-solver.js- Solve linear equations and find x
    Supports: ax + b = c, ax + b = cx + d, brackets, fractions
    ============================================================ */
 
@@ -151,12 +151,12 @@ function solveEquation() {
         if (totalCoefficient === 0) {
             if (totalConstant === 0) {
                 area.innerHTML = `<div class="result-card">
-                    <div class="result-card-title">∞ Infinite Solutions</div>
+                    <div class="result-card-title">Infinite Solutions</div>
                     <div class="result-card-detail">The equation is true for all values of x.</div>
                 </div>`;
             } else {
                 area.innerHTML = `<div class="result-card">
-                    <div class="result-card-title">⚠️ No Solution</div>
+                    <div class="result-card-title">No Solution</div>
                     <div class="result-card-detail">The equation has no solution.</div>
                 </div>`;
             }

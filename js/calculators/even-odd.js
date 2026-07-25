@@ -1,5 +1,5 @@
 /* ============================================================
-   even-odd.js — Logic for Even / Odd checker
+   even-odd.js- Logic for Even / Odd checker
    ============================================================ */
 
 function checkEvenOdd() {

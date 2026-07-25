@@ -1,5 +1,5 @@
 /* ============================================================
-   fraction-calculator.js — Multi-fraction Calculator
+   fraction-calculator.js- Multi-fraction Calculator
    Supports: +, −, ×, ÷ across N fractions | Decimals & whole numbers
    ============================================================ */
 

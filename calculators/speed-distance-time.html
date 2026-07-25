@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speed, Distance &amp; Time Calculator- CalculatorPro</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+
+  <link rel="stylesheet" href="../styles/theme.css" />
+  <link rel="stylesheet" href="../styles/calculator.css" />
+</head>
+
+<body>
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+
+  <nav class="navbar">
+    <a class="navbar-brand" href="../index.html">
+      <span class="navbar-brand-icon">
+        <span class="iconify" data-icon="tabler:calculator" data-width="28"></span>
+      </span>
+      <span class="navbar-brand-name">CalculatorPro</span>
+    </a>
+    <span class="navbar-pill">Speed, Distance &amp; Time</span>
+  </nav>
+
+  <main class="calc-container">
+    <div class="calc-header">
+      <div class="calc-icon" style="background: #e8e0f5">
+        <span class="iconify" data-icon="tabler:gauge" data-width="36" data-height="36" style="color: #6e3482"></span>
+      </div>
+      <h1 class="calc-title">Speed, Distance &amp; Time</h1>
+      <p class="calc-desc">
+        Calculate speed, distance, or time with exact conversions (km/h, m/s, mph, hours, mins, secs).
+      </p>
+    </div>
+
+    <div class="calc-card-single">
+      <!-- Target Selector -->
+      <label class="input-label">What do you want to calculate?</label>
+      <select id="sdt-target" class="calc-input" onchange="updateSDTFields()">
+        <option value="speed">Calculate Speed (S = D / T)</option>
+        <option value="distance">Calculate Distance (D = S × T)</option>
+        <option value="time">Calculate Time (T = D / S)</option>
+      </select>
+
+      <!-- Dynamic Input Section -->
+      <div id="sdt-inputs" class="mt-4 space-y-3">
+        <!-- Populated by JS on load / change -->
+      </div>
+
+      <button onclick="calculateSDT()" class="calc-btn mt-4">
+        <span class="iconify" data-icon="tabler:calculator" data-width="18"></span>
+        Calculate Result
+      </button>
+
+      <div id="result-area" class="result-area"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">Made for Students</footer>
+
+  <script src="../js/calculators/speed-distance-time.js"></script>
+</body>
+
+</html>

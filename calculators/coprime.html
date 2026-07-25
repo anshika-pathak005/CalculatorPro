@@ -1,117 +1,81 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coprime Checker — CalculatorPro</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coprime Checker- CalculatorPro</title>
 
-    <!-- Iconify CDN -->
-    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="../styles/theme.css" />
-    <link rel="stylesheet" href="../styles/calculator.css" />
-  </head>
-  <body>
-    <div class="bg-blob bg-blob-1"></div>
-    <div class="bg-blob bg-blob-2"></div>
+  <!-- Iconify CDN -->
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-      <a class="navbar-brand" href="../index.html">
-        <span class="navbar-brand-icon">
-          <span
-            class="iconify"
-            data-icon="tabler:calculator"
-            data-width="28"
-          ></span>
-        </span>
-        <span class="navbar-brand-name">CalculatorPro</span>
-      </a>
-      <span class="navbar-pill">Coprime Checker</span>
-    </nav>
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles/theme.css" />
+  <link rel="stylesheet" href="../styles/calculator.css" />
+</head>
 
-    <!-- Calculator Main Section -->
-    <main class="calc-container">
-      <div class="calc-header">
-        <div class="calc-icon" style="background: #e8d8f0">
-          <span
-            class="iconify"
-            data-icon="tabler:brand-codesandbox"
-            data-width="36"
-            data-height="36"
-            style="color: #6e3482"
-          ></span>
-        </div>
-        <h1 class="calc-title">Coprime Checker</h1>
-        <p class="calc-desc">
-          Check if two numbers are coprime (relatively prime) — when their HCF
-          is 1.
-        </p>
+<body>
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="../index.html">
+      <span class="navbar-brand-icon">
+        <span class="iconify" data-icon="tabler:calculator" data-width="28"></span>
+      </span>
+      <span class="navbar-brand-name">CalculatorPro</span>
+    </a>
+    <span class="navbar-pill">Coprime Checker</span>
+  </nav>
+
+  <!-- Calculator Main Section -->
+  <main class="calc-container">
+    <div class="calc-header">
+      <div class="calc-icon" style="background: #e8d8f0">
+        <span class="iconify" data-icon="tabler:brand-codesandbox" data-width="36" data-height="36"
+          style="color: #6e3482"></span>
       </div>
+      <h1 class="calc-title">Coprime Checker</h1>
+      <p class="calc-desc">
+        Check if two numbers are coprime (relatively prime)- when their HCF
+        is 1.
+      </p>
+    </div>
 
-      <div class="calc-card-single">
-        <label class="input-label">
-          <span
-            class="iconify"
-            data-icon="tabler:number-1"
-            data-width="18"
-          ></span>
-          First Number
-        </label>
-        <input
-          type="number"
-          id="num1"
-          class="calc-input"
-          placeholder="e.g., 8"
-        />
+    <div class="calc-card-single">
+      <label class="input-label">
+        <span class="iconify" data-icon="tabler:number-1" data-width="18"></span>
+        First Number
+      </label>
+      <input type="number" id="num1" class="calc-input" placeholder="e.g., 8" />
 
-        <label class="input-label mt-3">
-          <span
-            class="iconify"
-            data-icon="tabler:number-2"
-            data-width="18"
-          ></span>
-          Second Number
-        </label>
-        <input
-          type="number"
-          id="num2"
-          class="calc-input"
-          placeholder="e.g., 15"
-        />
+      <label class="input-label mt-3">
+        <span class="iconify" data-icon="tabler:number-2" data-width="18"></span>
+        Second Number
+      </label>
+      <input type="number" id="num2" class="calc-input" placeholder="e.g., 15" />
 
-        <button onclick="checkCoprime()" class="calc-btn">
-          <span
-            class="iconify"
-            data-icon="tabler:checkup"
-            data-width="18"
-          ></span>
-          Check if Coprime
-        </button>
+      <button onclick="checkCoprime()" class="calc-btn">
+        <span class="iconify" data-icon="tabler:checkup" data-width="18"></span>
+        Check if Coprime
+      </button>
 
-        <button
-          onclick="clearCoprime()"
-          class="calc-btn-clear"
-          style="margin-top: 0.75rem"
-        >
-          <span
-            class="iconify"
-            data-icon="tabler:refresh"
-            data-width="18"
-          ></span>
-          Clear
-        </button>
+      <button onclick="clearCoprime()" class="calc-btn-clear" style="margin-top: 0.75rem">
+        <span class="iconify" data-icon="tabler:refresh" data-width="18"></span>
+        Clear
+      </button>
 
-        <div id="result-area" class="result-area"></div>
-      </div>
-    </main>
+      <div id="result-area" class="result-area"></div>
+    </div>
+  </main>
 
-    <footer class="site-footer">Made for Class 6 &amp; 7 students</footer>
+  <footer class="site-footer">Made for Class 6 &amp; 7 students</footer>
 
-    <script src="../js/calculators/coprime.js"></script>
-  </body>
+  <script src="../js/calculators/coprime.js"></script>
+</body>
+
 </html>

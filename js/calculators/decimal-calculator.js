@@ -1,5 +1,5 @@
 /* ============================================================
-   decimal-calculator.js — Decimal Calculator
+   decimal-calculator.js- Decimal Calculator
    Supports: Addition, Subtraction, Multiplication, Division
    ============================================================ */
 

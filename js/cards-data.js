@@ -1,5 +1,5 @@
 /* ============================================================
-   cards-data.js — Add new calculators here ONLY.
+   cards-data.js- Add new calculators here ONLY.
    Each object = one card on the homepage.
 
    icon      : Iconify icon name
@@ -95,7 +95,7 @@ const CALCULATORS = [
     },
     {
         title: "Fraction Simplifier",
-        description: "Enter numerator and denominator — get the fraction in its simplest form.",
+        description: "Enter numerator and denominator- get the fraction in its simplest form.",
         icon: "tabler:divide",
         iconBg: "#FDE8D8",
         iconColor: "#C4601A",
@@ -156,15 +156,40 @@ const CALCULATORS = [
         badge: "Algebra",
         link: "calculators/equation-solver.html",
     },
-
-    // ── ADD MORE CALCULATORS BELOW THIS LINE ─────────────────
-    // {
-    //   title:      "Square Root",
-    //   description:"Find the square root of any number.",
-    //   icon:       "tabler:square-root",
-    //   iconBg:     "#D8EEF5",
-    //   iconColor:  "#1A6A8A",
-    //   badge:      "Numbers",
-    //   link:       "calculators/square-root.html",
-    // },
+    {
+        title: "Simple & Compound Interest",
+        description: "Calculate SI, CI, Principal, Rate, Time, and compounding periods with step-by-step Class 7 & 8 formulas.",
+        icon: "tabler:businessplan",
+        iconBg: "#E8F5E8",
+        iconColor: "#1A8A4A",
+        badge: "Commercial Math",
+        link: "calculators/interest-calculator.html",
+    },
+    {
+        title: "Exponents & Powers",
+        description: "Solve exponent operations (aᵐ + bⁿ, aᵐ × aⁿ), scientific notation, and interactive exponent rules.",
+        icon: "tabler:math-symbols",
+        iconBg: "#E0E8F5",
+        iconColor: "#3456A4",
+        badge: "Algebra",
+        link: "calculators/exponents-powers.html",
+    },
+    {
+        title: "Speed, Distance & Time",
+        description: "Calculate speed, distance, or time with exact conversions (km/h, m/s, mph, hours, mins, secs).",
+        icon: "tabler:gauge",
+        iconBg: "#E8E0F5",
+        iconColor: "#6E3482",
+        badge: "Utility",
+        link: "calculators/speed-distance-time.html",
+    },
+    {
+        title: "Pythagorean Theorem",
+        description: "Calculate missing hypotenuse or legs (a² + b² = c²), test Pythagorean triplets, perimeter, and area.",
+        icon: "tabler:triangle",
+        iconBg: "#E8E0F5",
+        iconColor: "#6E3482",
+        badge: "Geometry",
+        link: "calculators/pythagoras.html",
+    },
 ];

@@ -1,5 +1,5 @@
 /* ============================================================
-   lcm-hcf.js — Logic for LCM & HCF calculator with dynamic inputs
+   lcm-hcf.js- Logic for LCM & HCF calculator with dynamic inputs
    ============================================================ */
 
 let inputCounter = 2; // Start from index 2 since we have 0 and 1 initially
@@ -161,7 +161,7 @@ function calculateLCMHCF() {
         <div class="result-box">
             <div class="result-label">
                 <span class="iconify" data-icon="tabler:arrow-up-circle" data-width="16"></span>
-                HCF — Highest Common Factor
+                HCF- Highest Common Factor
             </div>
             <div class="result-value">${hcfResult}</div>
             <div class="result-detail">Largest number that divides <strong>${numbersList}</strong> exactly.</div>
@@ -170,7 +170,7 @@ function calculateLCMHCF() {
         <div class="result-box">
             <div class="result-label">
                 <span class="iconify" data-icon="tabler:arrow-down-circle" data-width="16"></span>
-                LCM — Lowest Common Multiple
+                LCM- Lowest Common Multiple
             </div>
             <div class="result-value">${lcmResult}</div>
             <div class="result-detail">Smallest positive number that is a multiple of <strong>${numbersList}</strong>.</div>

@@ -1,5 +1,5 @@
 /* ============================================================
-   coprime.js — Logic for Coprime (Relatively Prime) Checker
+   coprime.js- Logic for Coprime (Relatively Prime) Checker
    ============================================================ */
 
 function gcd(a, b) {
@@ -74,7 +74,7 @@ function checkCoprime() {
 
     // Result styling
     const resultColor = isCoprime ? "var(--color-secondary)" : "var(--color-error-fg)";
-    const resultIcon = isCoprime ? "✅" : "❌";
+    const resultIcon = "";
     const resultText = isCoprime ? "Coprime (Relatively Prime)" : "Not Coprime";
 
     // Detailed explanation
